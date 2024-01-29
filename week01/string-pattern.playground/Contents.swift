@@ -40,7 +40,7 @@ func generateBlock(_ rows: Int, _ colums: Int ) -> String {
     }
     return block
 }
-let block1 = generateBlock(10, 150)
+let block1 = generateBlock(10, 20)
 //let block2 = generateBlock(10)
 //let block3 = generateBlock(10)
 //let block4 = generateBlock(10)

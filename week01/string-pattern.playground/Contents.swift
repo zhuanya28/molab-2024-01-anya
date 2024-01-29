@@ -41,10 +41,10 @@ func generateBlock(_ n: Int) -> String {
     }
     return block
 }
-let block1 = generateBlock(5)
-let block2 = generateBlock(5)
-let block3 = generateBlock(5)
-let block4 = generateBlock(5)
+let block1 = generateBlock(10)
+let block2 = generateBlock(10)
+let block3 = generateBlock(10)
+let block4 = generateBlock(10)
 
 print(block1)
 

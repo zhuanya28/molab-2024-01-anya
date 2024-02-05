@@ -11,26 +11,26 @@ let renderer = UIGraphicsImageRenderer(size: CGSize(width: dim, height: dim))
 var image = renderer.image { (context) in
     let ctx = context.cgContext
 
-    for row in 0..<Int(dim) {
-        for col in 0..<Int(dim){
+    for row in stride(from: 0, through: dim, by: 10) {
+        for col in stride(from: 0, through: dim, by: 10){
             let x = CGFloat(row)
             let y = CGFloat(col)
             // Set the stroke color before moving to the top of the current column
             ctx.setStrokeColor(UIColor.random().cgColor)
             
-            // Move to the top of the current column
             ctx.move(to: CGPoint(x: x, y: 0))
-            
-            // Add a line to the bottom of the current column
+            ctx.addLine(to: CGPoint(x: x, y: y))
+    
+            ctx.move(to: CGPoint(x: 0, y: y))
             ctx.addLine(to: CGPoint(x: x, y: y))
             
-            // Draw the path
+
             ctx.strokePath()
         }
     }
 }
 
-// Extension to generate a random UIColor
+// extension to generate a random UIColor
 extension UIColor {
     static func random() -> UIColor {
         return UIColor(

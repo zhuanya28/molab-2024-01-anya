@@ -45,16 +45,16 @@ extension UIColor {
 // Display the image
 image
 
-//let data = image.pngData()
-//
-//let folder = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
-//// Output path for the file in the Documents folder
-//let filePath = folder!.appendingPathComponent("10print.png");
-//
-//let err: ()? = try? data?.write(to: filePath)
-//print("err \(String(describing: err))\nfilePath \(filePath)")
-//// Terminal command string to copy output file to Downloads folder
-//print("cp \(filePath.absoluteString.dropFirst(7)) ~/Downloads/10print.png" )
+let data = image.pngData()
+
+let folder = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+// Output path for the file in the Documents folder
+let filePath = folder!.appendingPathComponent("10print.png");
+
+let err: ()? = try? data?.write(to: filePath)
+print("err \(String(describing: err))\nfilePath \(filePath)")
+// Terminal command string to copy output file to Downloads folder
+print("cp \(filePath.absoluteString.dropFirst(7)) ~/Downloads/10print.png" )
 
 // Terminal command to copy the image file to the downloads folder
 // cp --filePath-- ~/Downloads/.

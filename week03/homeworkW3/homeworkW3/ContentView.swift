@@ -8,25 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var randomColors: [Color] = []
+//    @State private var randomColors: [Color] = []
     @State private var imageNames = ["star.fill", "circle.fill", "square.fill", "triangle.fill", "beats.studiobuds.chargingcase", "music.mic.circle.fill", "octagon.lefthalf.filled", "arrow.up.to.line.circle.fill"]
-    @State private var  colors : [UIColor] = [.green, .orange, .red, .black, .blue, .brown, .white, .purple]
+//    @State private var  colors : [UIColor] = [.green, .orange, .red, .black, .blue, .brown, .white, .purple]
     
     func generateRandomData() {
         imageNames.shuffle()
-        colors.shuffle()
+//        colors.shuffle()
     }
 
     var body: some View {
         VStack {
             ForEach(imageNames.indices, id: \.self) { index in
                            if let imageNameIndex = imageNames.firstIndex(of: imageNames[index]) {
-                               let currentColor = colors[imageNameIndex]
+//                               let currentColor = colors[imageNameIndex]
                                Image(systemName: imageNames[index])
                                    .resizable()
                                    .aspectRatio(contentMode: .fit)
                                    .frame(width: 50, height: 50)
-//                                   .tint(colors[index])
+//                                   .foregroundColor(UIColor.random().cgColor)
                                    .padding()
                            }
                        }
@@ -43,3 +43,13 @@ struct ContentView: View {
     ContentView()
 }
 
+extension UIColor {
+    static func random() -> UIColor {
+        return UIColor(
+            red: .random(in: 0...1),
+            green: .random(in: 0...1),
+            blue: .random(in: 0...1),
+            alpha: 1.0
+        )
+    }
+}

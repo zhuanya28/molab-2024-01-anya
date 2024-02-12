@@ -8,31 +8,33 @@
 import SwiftUI
 
 struct ContentView: View {
-    let imageNames = ["star.fill", "circle.fill", "square.fill", "triangle.fill"]
     @State private var randomColors: [Color] = []
+    @State private var imageNames = ["star.fill", "circle.fill", "square.fill", "triangle.fill", "beats.studiobuds.chargingcase", "music.mic.circle.fill", "octagon.lefthalf.filled", "arrow.up.to.line.circle.fill"]
+    @State private var  colors : [UIColor] = [.green, .orange, .red, .black, .blue, .brown, .white, .purple]
+    
+    func generateRandomData() {
+        imageNames.shuffle()
+        colors.shuffle()
+    }
 
-       var body: some View {
-           VStack {
-               ForEach(imageNames.indices, id: \.self) { index in
-                   Image(systemName: imageNames[index])
-                       .resizable()
-                       .aspectRatio(contentMode: .fit)
-                       .frame(width: 100, height: 100)
-                       .foregroundColor(randomColors[index])
-                       .padding()
-               }
-               Button("MobLab Dev Application Image") {
-                   self.generateRandomColor()
-               }
-               .padding()
-           }
-       }
+    var body: some View {
+        VStack {
+            ForEach(imageNames.indices, id: \.self) { index in
+                           if let imageNameIndex = imageNames.firstIndex(of: imageNames[index]) {
+                               let currentColor = colors[imageNameIndex]
+                               Image(systemName: imageNames[index])
+                                   .resizable()
+                                   .aspectRatio(contentMode: .fit)
+                                   .frame(width: 50, height: 50)
+//                                   .tint(colors[index])
+                                   .padding()
+                           }
+                       }
 
-    func generateRandomColor() {
-        randomColors = (0..<imageNames.count).map { _ in
-            Color(red: Double.random(in: 0...1),
-                  green: Double.random(in: 0...1),
-                  blue: Double.random(in: 0...1))
+            Button("Generate new pattern!") {
+                self.generateRandomData()
+            }
+            .padding()
         }
     }
 }
@@ -40,3 +42,4 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
+

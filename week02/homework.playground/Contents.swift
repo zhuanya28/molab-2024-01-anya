@@ -11,8 +11,8 @@ let renderer = UIGraphicsImageRenderer(size: CGSize(width: dim, height: dim))
 var image = renderer.image { (context) in
     let ctx = context.cgContext
 
-    for row in stride(from: 0, through: dim, by: 10) {
-        for col in stride(from: 0, through: dim, by: 10){
+    for row in stride(from: 0, through: dim, by: 5) {
+        for col in stride(from: 0, through: dim, by: 5){
             let x = CGFloat(row)
             let y = CGFloat(col)
             // Set the stroke color before moving to the top of the current column
@@ -23,6 +23,8 @@ var image = renderer.image { (context) in
     
             ctx.move(to: CGPoint(x: 0, y: y))
             ctx.addLine(to: CGPoint(x: x, y: y))
+            
+            ctx.setLineWidth(5.0)
             
 
             ctx.strokePath()

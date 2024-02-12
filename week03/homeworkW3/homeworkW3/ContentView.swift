@@ -26,7 +26,7 @@ struct ContentView: View {
                                    .resizable()
                                    .aspectRatio(contentMode: .fit)
                                    .frame(width: 50, height: 50)
-//                                   .foregroundColor(UIColor.random().cgColor)
+                                   .foregroundColor(Color.random())
                                    .padding()
                            }
                        }
@@ -43,13 +43,12 @@ struct ContentView: View {
     ContentView()
 }
 
-extension UIColor {
-    static func random() -> UIColor {
-        return UIColor(
+extension Color {
+    static func random() -> Color {
+        return Color(
             red: .random(in: 0...1),
             green: .random(in: 0...1),
-            blue: .random(in: 0...1),
-            alpha: 1.0
+            blue: .random(in: 0...1)
         )
     }
 }

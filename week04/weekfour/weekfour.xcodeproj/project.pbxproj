@@ -13,9 +13,6 @@
 		A724A3F12B8A858000F2EB63 /* weekfourApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A724A3F02B8A858000F2EB63 /* weekfourApp.swift */; };
 		A724A3F52B8A858500F2EB63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A724A3F42B8A858500F2EB63 /* Assets.xcassets */; };
 		A724A3F82B8A858500F2EB63 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A724A3F72B8A858500F2EB63 /* Preview Assets.xcassets */; };
-		A724A4022B8A858600F2EB63 /* weekfourTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A724A4012B8A858600F2EB63 /* weekfourTests.swift */; };
-		A724A40C2B8A858600F2EB63 /* weekfourUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A724A40B2B8A858600F2EB63 /* weekfourUITests.swift */; };
-		A724A40E2B8A858600F2EB63 /* weekfourUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A724A40D2B8A858600F2EB63 /* weekfourUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,10 +41,7 @@
 		A724A3F42B8A858500F2EB63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A724A3F72B8A858500F2EB63 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A724A3FD2B8A858600F2EB63 /* weekfourTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = weekfourTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A724A4012B8A858600F2EB63 /* weekfourTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weekfourTests.swift; sourceTree = "<group>"; };
 		A724A4072B8A858600F2EB63 /* weekfourUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = weekfourUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A724A40B2B8A858600F2EB63 /* weekfourUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weekfourUITests.swift; sourceTree = "<group>"; };
-		A724A40D2B8A858600F2EB63 /* weekfourUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weekfourUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,8 +73,6 @@
 			isa = PBXGroup;
 			children = (
 				A724A3EF2B8A858000F2EB63 /* weekfour */,
-				A724A4002B8A858600F2EB63 /* weekfourTests */,
-				A724A40A2B8A858600F2EB63 /* weekfourUITests */,
 				A724A3EE2B8A858000F2EB63 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -103,6 +95,7 @@
 				A71CA55C2B8AB4E600E8A3D3 /* CountdownTimerPage.swift */,
 				A71CA5602B8AB79E00E8A3D3 /* AudioPlayerPage.swift */,
 				A724A3F42B8A858500F2EB63 /* Assets.xcassets */,
+				A77F06852B8BCFBD008ED258 /* Resources */,
 				A724A3F62B8A858500F2EB63 /* Preview Content */,
 			);
 			path = weekfour;
@@ -116,21 +109,11 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		A724A4002B8A858600F2EB63 /* weekfourTests */ = {
+		A77F06852B8BCFBD008ED258 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A724A4012B8A858600F2EB63 /* weekfourTests.swift */,
 			);
-			path = weekfourTests;
-			sourceTree = "<group>";
-		};
-		A724A40A2B8A858600F2EB63 /* weekfourUITests */ = {
-			isa = PBXGroup;
-			children = (
-				A724A40B2B8A858600F2EB63 /* weekfourUITests.swift */,
-				A724A40D2B8A858600F2EB63 /* weekfourUITestsLaunchTests.swift */,
-			);
-			path = weekfourUITests;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,7 +257,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A724A4022B8A858600F2EB63 /* weekfourTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,8 +264,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A724A40E2B8A858600F2EB63 /* weekfourUITestsLaunchTests.swift in Sources */,
-				A724A40C2B8A858600F2EB63 /* weekfourUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

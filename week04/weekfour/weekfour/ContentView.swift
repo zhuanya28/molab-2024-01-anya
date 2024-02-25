@@ -11,16 +11,10 @@ import AVFoundation
 struct ContentView: View {
     var body: some View {
         TabView {
-            CountdownTimerPage(duration: 60, title: "Timer 1")
+            CountdownTimerPage()
                 .tabItem {
                     Image(systemName: "1.circle.fill")
                     Text("Timer 1")
-                }
-
-            CountdownTimerPage(duration: 30, title: "Timer 2")
-                .tabItem {
-                    Image(systemName: "2.circle.fill")
-                    Text("Timer 2")
                 }
 
             AudioPlayerPage()

@@ -1,90 +1,142 @@
+import SwiftUI
+import AVFoundation
 
+let timer = Timer
+    .publish(every: 1, on: .main, in: .common)
+    .autoconnect()
 
-struct CountdownTimerPage: View {
-    @State private var countdownSeconds: Int
-    @State private var isCountingDown = false
-    @State private var timer: Timer?
-
-    let title: String
-
-    init(duration: Int, title: String) {
-        self._countdownSeconds = State(initialValue: duration)
-        self.title = title
-    }
-
+struct Clock: View {
+    var counter: Int
+    var countTo: Int
+    
     var body: some View {
         VStack {
-            Text(title)
-                .font(.largeTitle)
-                .padding()
-
-            Text("\(countdownSeconds)")
-                .font(.system(size: 60))
-                .padding()
-
-            Toggle("Toggle Countdown", isOn: $isCountingDown)
-                .padding()
-
-            Button(action: {
-                resetCountdown()
-            }) {
-                Text("Reset")
-                    .padding()
-                    .foregroundColor(.white)
-                    .background(Color.red)
-                    .cornerRadius(10)
-            }
-        }
-        .onAppear {
-            // Start the countdown when the view appears, if the toggle is on
-            if isCountingDown {
-                startCountdown()
-            }
-        }
-        .onChange(of: isCountingDown) { newValue in
-            // Respond to changes in the toggle value
-            if newValue {
-                startCountdown()
-            } else {
-                stopCountdown()
-            }
-        }
-        .onDisappear {
-            stopCountdown()
+            Text(counterToMinutes())
+                .font(.system(size: 36))
+                .fontWeight(.black)
         }
     }
+    
+    func counterToMinutes() -> String {
+        let currentTime = countTo - counter
+        let seconds = currentTime % 60
+        let minutes = Int(currentTime / 60)
+        
+        return "\(minutes):\(seconds < 10 ? "0" : "")\(seconds)"
+    }
+}
 
-    private func startCountdown() {
-        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
-            if countdownSeconds > 0 {
-                countdownSeconds -= 1
-            } else {
-                isCountingDown = false
-                timer?.invalidate()
+struct ProgressTrack: View {
+    var body: some View {
+        Circle()
+            .fill(Color.clear)
+            .frame(width: 250, height: 250)
+            .overlay(
+                Circle().stroke(Color.black, lineWidth: 15)
+            )
+    }
+}
+
+struct ProgressBar: View {
+    var counter: Int
+    var countTo: Int
+    
+    var body: some View {
+        Circle()
+            .fill(Color.clear)
+            .frame(width: 250, height: 250)
+            .overlay(
+                Circle().trim(from: 0, to: (progress()))
+                    .stroke(
+                        style: StrokeStyle(
+                            lineWidth: 15,
+                            lineCap: .round,
+                            lineJoin: .round
+                        )
+                    )
+                    .foregroundColor(
+                        (completed() ? Color.red : Color.green)
+                    )
+            )
+    }
+    
+    func completed() -> Bool {
+        return progress() == 1
+    }
+    
+    func progress() -> CGFloat {
+        return (CGFloat(counter) / CGFloat(countTo))
+    }
+}
+
+struct CountdownTimerPage: View {
+    @State private var counter: Int = 0
+    @State private var isCountingDown = true
+    @State private var player: AVAudioPlayer?
+    
+    var body: some View {
+        VStack {
+            ZStack {
+                ProgressTrack()
+                ProgressBar(counter: counter, countTo: 20)
+                Clock(counter: counter, countTo: 20)
+            }
+            
+            HStack {
+                Button(action: {
+                    resetCountdown()
+                }) {
+                    Text("Reset")
+                        .font(.system(size: 20))
+                        .frame(width: 100, height: 40)
+                        .background(Color.red)
+                        .foregroundColor(Color.white)
+                        .cornerRadius(15)
+              
+                }
+                .padding()
+                
+                Button(action: {
+                    toggleCountdown()
+                }){
+                    Text(isCountingDown ? "Pause" : "Resume")
+                        .font(.system(size: 20))
+                        .frame(width: 100, height: 40)
+                        .background(Color.black)
+                        .foregroundColor(Color.white)
+                        .cornerRadius(15)
+                }
+                .padding()
+            }
+        }
+        .onReceive(timer) { time in
+            if isCountingDown, self.counter < 20 {
+                self.counter += 1
+            } else if self.counter == 20 {
                 playSound()
             }
         }
     }
-
-    private func stopCountdown() {
-        timer?.invalidate()
-    }
-
+    
     private func resetCountdown() {
-        isCountingDown = false
-        countdownSeconds = 60
-        timer?.invalidate()
+        counter = 0
     }
-
+    
+    private func toggleCountdown() {
+        isCountingDown.toggle()
+    }
+    
     private func playSound() {
-        // You can replace "soundFileName" with the name of your audio file (e.g., "bell.mp3").
-        if let soundURL = Bundle.main.url(forResource: "soundFileName", withExtension: "mp3") {
-            let player = try? AVAudioPlayer(contentsOf: soundURL)
-            player?.play()
+        if let soundURL = Bundle.main.url(forResource: "A_major", withExtension: "m4a") {
+            do {
+                player = try AVAudioPlayer(contentsOf: soundURL)
+                player?.play()
+            } catch {
+                print("Error playing sound: \(error.localizedDescription)")
+            }
         }
     }
 }
-
 
 struct CountdownTimerPage_Previews: PreviewProvider {
     static var previews: some View {

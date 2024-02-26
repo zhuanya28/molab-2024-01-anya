@@ -2,40 +2,51 @@ import AVFoundation
 import SwiftUI
 
 struct AudioPlayerPage: View {
-  @State private var player: AVAudioPlayer?
-  @State private var selectedSound: String = "bounce"
+    @State private var player: AVAudioPlayer?
+    @State private var selectedAnimal: String = "fish"
 
-  let soundNames = ["bounce", "button", "crawler_die", "crawler_jump", "flyerattack", "flyercloseeye", "flyerdie"]
+    let animals = ["fish", "cat", "dog"]
 
-  var body: some View {
-    VStack {
-      Picker(selection: $selectedSound, label: Text("Select Sound")) {
-        ForEach(soundNames, id: \.self) {
-          Text($0)
+    var body: some View {
+        VStack {
+            Image(systemName: selectedAnimal + ".fill")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 100, height: 100)
+
+            Picker(selection: $selectedAnimal, label: Text("Select Animal")) {
+                ForEach(animals, id: \.self) { animal in
+                    Text(animal)
+                }
+            }
+            .padding()
+
+            Button(action: {
+                self.playSound()
+            }) {
+             
+                    Text("Play Sound")
+                        .font(.system(size: 20))
+                        .frame(width: 200, height: 40)
+                        .background(Color.black)
+                        .foregroundColor(Color.white)
+                        .cornerRadius(15)
+            }
         }
-      }
-      .padding()
-
-      Button(action: {
-        self.playSound()
-      }) {
-        Text("Play Sound")
-      }
-    }
-  }
-
-  func playSound() {
-    guard let soundURL = Bundle.main.url(forResource: selectedSound, withExtension: "wav") else {
-      return
     }
 
-    do {
-      player = try AVAudioPlayer(contentsOf: soundURL)
-    } catch {
-      print("Failed to load the sound: \(error)")
+    func playSound() {
+        guard let soundURL = Bundle.main.url(forResource: selectedAnimal, withExtension: "wav") else {
+            return
+        }
+
+        do {
+            player = try AVAudioPlayer(contentsOf: soundURL)
+            player?.play()
+        } catch {
+            print("Failed to load the sound: \(error)")
+        }
     }
-    player?.play()
-  }
 }
 
 struct AudioPlayerPage_Previews: PreviewProvider {
@@ -43,7 +54,4 @@ struct AudioPlayerPage_Previews: PreviewProvider {
         AudioPlayerPage()
     }
 }
-
-
-
 

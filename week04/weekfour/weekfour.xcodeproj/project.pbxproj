@@ -20,6 +20,10 @@
 		A77F06912B8C346F008ED258 /* crawler_die.wav in Resources */ = {isa = PBXBuildFile; fileRef = A77F068A2B8C346F008ED258 /* crawler_die.wav */; };
 		A77F06922B8C346F008ED258 /* crawler_jump.wav in Resources */ = {isa = PBXBuildFile; fileRef = A77F068B2B8C346F008ED258 /* crawler_jump.wav */; };
 		A77F06932B8C346F008ED258 /* flyerdie.wav in Resources */ = {isa = PBXBuildFile; fileRef = A77F068C2B8C346F008ED258 /* flyerdie.wav */; };
+		A77F06992B8C411F008ED258 /* click.wav in Resources */ = {isa = PBXBuildFile; fileRef = A77F06962B8C411F008ED258 /* click.wav */; };
+		A77F069B2B8C411F008ED258 /* cat.wav in Resources */ = {isa = PBXBuildFile; fileRef = A77F06982B8C411F008ED258 /* cat.wav */; };
+		A77F069D2B8C4374008ED258 /* dog.wav in Resources */ = {isa = PBXBuildFile; fileRef = A77F069C2B8C4373008ED258 /* dog.wav */; };
+		A77F069F2B8C437E008ED258 /* fish.wav in Resources */ = {isa = PBXBuildFile; fileRef = A77F069E2B8C437E008ED258 /* fish.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +60,10 @@
 		A77F068A2B8C346F008ED258 /* crawler_die.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = crawler_die.wav; path = "../../../../../../../Downloads/Adding Audio & Video in SwiftUI assets/crawler_die.wav"; sourceTree = "<group>"; };
 		A77F068B2B8C346F008ED258 /* crawler_jump.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = crawler_jump.wav; path = "../../../../../../../Downloads/Adding Audio & Video in SwiftUI assets/crawler_jump.wav"; sourceTree = "<group>"; };
 		A77F068C2B8C346F008ED258 /* flyerdie.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = flyerdie.wav; path = "../../../../../../../Downloads/Adding Audio & Video in SwiftUI assets/flyerdie.wav"; sourceTree = "<group>"; };
+		A77F06962B8C411F008ED258 /* click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = click.wav; path = ../../../../../../../Downloads/click.wav; sourceTree = "<group>"; };
+		A77F06982B8C411F008ED258 /* cat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = cat.wav; path = ../../../../../../../Downloads/cat.wav; sourceTree = "<group>"; };
+		A77F069C2B8C4373008ED258 /* dog.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dog.wav; path = ../../../../../../../Downloads/dog.wav; sourceTree = "<group>"; };
+		A77F069E2B8C437E008ED258 /* fish.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = fish.wav; path = ../../../../../../../Downloads/fish.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +134,10 @@
 		A77F06852B8BCFBD008ED258 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A77F069E2B8C437E008ED258 /* fish.wav */,
+				A77F069C2B8C4373008ED258 /* dog.wav */,
+				A77F06982B8C411F008ED258 /* cat.wav */,
+				A77F06962B8C411F008ED258 /* click.wav */,
 				A77F06872B8C346F008ED258 /* bounce.wav */,
 				A77F06862B8C346F008ED258 /* button.wav */,
 				A77F068A2B8C346F008ED258 /* crawler_die.wav */,
@@ -241,13 +253,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A77F069F2B8C437E008ED258 /* fish.wav in Resources */,
+				A77F069B2B8C411F008ED258 /* cat.wav in Resources */,
 				A724A3F82B8A858500F2EB63 /* Preview Assets.xcassets in Resources */,
 				A77F06902B8C346F008ED258 /* flyerattack.wav in Resources */,
 				A77F06932B8C346F008ED258 /* flyerdie.wav in Resources */,
 				A724A3F52B8A858500F2EB63 /* Assets.xcassets in Resources */,
+				A77F06992B8C411F008ED258 /* click.wav in Resources */,
 				A77F068F2B8C346F008ED258 /* flyercloseeye.wav in Resources */,
 				A77F068E2B8C346F008ED258 /* bounce.wav in Resources */,
 				A77F068D2B8C346F008ED258 /* button.wav in Resources */,
+				A77F069D2B8C4374008ED258 /* dog.wav in Resources */,
 				A77F06912B8C346F008ED258 /* crawler_die.wav in Resources */,
 				A77F06922B8C346F008ED258 /* crawler_jump.wav in Resources */,
 			);

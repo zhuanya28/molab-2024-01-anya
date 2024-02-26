@@ -141,7 +141,7 @@ struct CountdownTimerPage: View {
     }
     
     private func playSoundButton() {
-        if let soundURL = Bundle.main.url(forResource: "bounce", withExtension: "wav") {
+        if let soundURL = Bundle.main.url(forResource: "click", withExtension: "wav") {
             do {
                 player = try AVAudioPlayer(contentsOf: soundURL)
                 player?.play()

@@ -19,8 +19,8 @@ struct ContentView: View {
 
             AudioPlayerPage()
                 .tabItem {
-                    Image(systemName: "speaker.fill")
-                    Text("Audio Player")
+                    Image(systemName: "pawprint.fill")
+                    Text("Animals")
                 }
         }
     }

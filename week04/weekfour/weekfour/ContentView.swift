@@ -14,7 +14,7 @@ struct ContentView: View {
             CountdownTimerPage()
                 .tabItem {
                     Image(systemName: "1.circle.fill")
-                    Text("Timer 1")
+                    Text("Timer")
                 }
 
             AudioPlayerPage()

@@ -13,6 +13,13 @@
 		A724A3F12B8A858000F2EB63 /* weekfourApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A724A3F02B8A858000F2EB63 /* weekfourApp.swift */; };
 		A724A3F52B8A858500F2EB63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A724A3F42B8A858500F2EB63 /* Assets.xcassets */; };
 		A724A3F82B8A858500F2EB63 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A724A3F72B8A858500F2EB63 /* Preview Assets.xcassets */; };
+		A77F068D2B8C346F008ED258 /* button.wav in Resources */ = {isa = PBXBuildFile; fileRef = A77F06862B8C346F008ED258 /* button.wav */; };
+		A77F068E2B8C346F008ED258 /* bounce.wav in Resources */ = {isa = PBXBuildFile; fileRef = A77F06872B8C346F008ED258 /* bounce.wav */; };
+		A77F068F2B8C346F008ED258 /* flyercloseeye.wav in Resources */ = {isa = PBXBuildFile; fileRef = A77F06882B8C346F008ED258 /* flyercloseeye.wav */; };
+		A77F06902B8C346F008ED258 /* flyerattack.wav in Resources */ = {isa = PBXBuildFile; fileRef = A77F06892B8C346F008ED258 /* flyerattack.wav */; };
+		A77F06912B8C346F008ED258 /* crawler_die.wav in Resources */ = {isa = PBXBuildFile; fileRef = A77F068A2B8C346F008ED258 /* crawler_die.wav */; };
+		A77F06922B8C346F008ED258 /* crawler_jump.wav in Resources */ = {isa = PBXBuildFile; fileRef = A77F068B2B8C346F008ED258 /* crawler_jump.wav */; };
+		A77F06932B8C346F008ED258 /* flyerdie.wav in Resources */ = {isa = PBXBuildFile; fileRef = A77F068C2B8C346F008ED258 /* flyerdie.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +49,13 @@
 		A724A3F72B8A858500F2EB63 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A724A3FD2B8A858600F2EB63 /* weekfourTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = weekfourTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A724A4072B8A858600F2EB63 /* weekfourUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = weekfourUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A77F06862B8C346F008ED258 /* button.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = button.wav; path = "../../../../../../../Downloads/Adding Audio & Video in SwiftUI assets/button.wav"; sourceTree = "<group>"; };
+		A77F06872B8C346F008ED258 /* bounce.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = bounce.wav; path = "../../../../../../../Downloads/Adding Audio & Video in SwiftUI assets/bounce.wav"; sourceTree = "<group>"; };
+		A77F06882B8C346F008ED258 /* flyercloseeye.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = flyercloseeye.wav; path = "../../../../../../../Downloads/Adding Audio & Video in SwiftUI assets/flyercloseeye.wav"; sourceTree = "<group>"; };
+		A77F06892B8C346F008ED258 /* flyerattack.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = flyerattack.wav; path = "../../../../../../../Downloads/Adding Audio & Video in SwiftUI assets/flyerattack.wav"; sourceTree = "<group>"; };
+		A77F068A2B8C346F008ED258 /* crawler_die.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = crawler_die.wav; path = "../../../../../../../Downloads/Adding Audio & Video in SwiftUI assets/crawler_die.wav"; sourceTree = "<group>"; };
+		A77F068B2B8C346F008ED258 /* crawler_jump.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = crawler_jump.wav; path = "../../../../../../../Downloads/Adding Audio & Video in SwiftUI assets/crawler_jump.wav"; sourceTree = "<group>"; };
+		A77F068C2B8C346F008ED258 /* flyerdie.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = flyerdie.wav; path = "../../../../../../../Downloads/Adding Audio & Video in SwiftUI assets/flyerdie.wav"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +126,13 @@
 		A77F06852B8BCFBD008ED258 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A77F06872B8C346F008ED258 /* bounce.wav */,
+				A77F06862B8C346F008ED258 /* button.wav */,
+				A77F068A2B8C346F008ED258 /* crawler_die.wav */,
+				A77F068B2B8C346F008ED258 /* crawler_jump.wav */,
+				A77F06892B8C346F008ED258 /* flyerattack.wav */,
+				A77F06882B8C346F008ED258 /* flyercloseeye.wav */,
+				A77F068C2B8C346F008ED258 /* flyerdie.wav */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -221,7 +242,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A724A3F82B8A858500F2EB63 /* Preview Assets.xcassets in Resources */,
+				A77F06902B8C346F008ED258 /* flyerattack.wav in Resources */,
+				A77F06932B8C346F008ED258 /* flyerdie.wav in Resources */,
 				A724A3F52B8A858500F2EB63 /* Assets.xcassets in Resources */,
+				A77F068F2B8C346F008ED258 /* flyercloseeye.wav in Resources */,
+				A77F068E2B8C346F008ED258 /* bounce.wav in Resources */,
+				A77F068D2B8C346F008ED258 /* button.wav in Resources */,
+				A77F06912B8C346F008ED258 /* crawler_die.wav in Resources */,
+				A77F06922B8C346F008ED258 /* crawler_jump.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

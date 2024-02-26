@@ -74,6 +74,7 @@ struct CountdownTimerPage: View {
     @State private var isCountingDown = true
     @State private var player: AVAudioPlayer?
     
+    
     var body: some View {
         VStack {
             ZStack {
@@ -85,6 +86,7 @@ struct CountdownTimerPage: View {
             HStack {
                 Button(action: {
                     resetCountdown()
+                    playSoundButton()
                 }) {
                     Text("Reset")
                         .font(.system(size: 20))
@@ -98,6 +100,7 @@ struct CountdownTimerPage: View {
                 
                 Button(action: {
                     toggleCountdown()
+                    playSoundButton()
                 }){
                     Text(isCountingDown ? "Pause" : "Resume")
                         .font(.system(size: 20))
@@ -113,7 +116,7 @@ struct CountdownTimerPage: View {
             if isCountingDown, self.counter < 20 {
                 self.counter += 1
             } else if self.counter == 20 {
-                playSound()
+                playSoundEnd()
             }
         }
     }
@@ -126,8 +129,19 @@ struct CountdownTimerPage: View {
         isCountingDown.toggle()
     }
     
-    private func playSound() {
-        if let soundURL = Bundle.main.url(forResource: "A_major", withExtension: "m4a") {
+    private func playSoundEnd() {
+        if let soundURL = Bundle.main.url(forResource: "button", withExtension: "wav") {
+            do {
+                player = try AVAudioPlayer(contentsOf: soundURL)
+                player?.play()
+            } catch {
+                print("Error playing sound: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    private func playSoundButton() {
+        if let soundURL = Bundle.main.url(forResource: "bounce", withExtension: "wav") {
             do {
                 player = try AVAudioPlayer(contentsOf: soundURL)
                 player?.play()

@@ -1,13 +1,42 @@
-
-import SwiftUI
 import AVFoundation
+import SwiftUI
 
 struct AudioPlayerPage: View {
-    var body: some View {
-        Text("Audio Player Page")
-    }
-}
+  @State private var player: AVAudioPlayer?
+  @State private var selectedSound: String = "bounce"
 
+  let soundNames = ["bounce", "button", "crawler_die", "crawler_jump", "flyerattack", "flyercloseeye", "flyerdie"]
+
+  var body: some View {
+    VStack {
+      Picker(selection: $selectedSound, label: Text("Select Sound")) {
+        ForEach(soundNames, id: \.self) {
+          Text($0)
+        }
+      }
+      .padding()
+
+      Button(action: {
+        self.playSound()
+      }) {
+        Text("Play Sound")
+      }
+    }
+  }
+
+  func playSound() {
+    guard let soundURL = Bundle.main.url(forResource: selectedSound, withExtension: "wav") else {
+      return
+    }
+
+    do {
+      player = try AVAudioPlayer(contentsOf: soundURL)
+    } catch {
+      print("Failed to load the sound: \(error)")
+    }
+    player?.play()
+  }
+}
 
 struct AudioPlayerPage_Previews: PreviewProvider {
     static var previews: some View {
@@ -16,30 +45,5 @@ struct AudioPlayerPage_Previews: PreviewProvider {
 }
 
 
-    
-//    @StateObject var audioDJ = AudioDJ()
-//    var body: some View {
-//        TimelineView(.animation) { context in
-//            VStack {
-//                HStack {
-//                    Button("Play") {
-//                        audioDJ.play()
-//                    }
-//                    Button("Stop") {
-//                        audioDJ.stop()
-//                    }
-//                    Button("Next") {
-//                        audioDJ.next()
-//                    }
-//                }
-//                Text("soundIndex \(audioDJ.soundIndex)")
-//                Text(audioDJ.soundFile)
-//                if let player = audioDJ.player {
-//                    Text("duration " + String(format: "%.1f", player.duration))
-//                    Text("currentTime " + String(format: "%.1f", player.currentTime))
-//                }
-//            }
-//        }
-//    }
 
 

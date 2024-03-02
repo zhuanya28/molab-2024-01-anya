@@ -34,7 +34,6 @@ struct AudioPlayerPage: View {
             }
         }
     }
-
     func playSound() {
         guard let soundURL = Bundle.main.url(forResource: selectedAnimal, withExtension: "wav") else {
             return
@@ -47,7 +46,10 @@ struct AudioPlayerPage: View {
             print("Failed to load the sound: \(error)")
         }
     }
+
 }
+
+
 
 struct AudioPlayerPage_Previews: PreviewProvider {
     static var previews: some View {

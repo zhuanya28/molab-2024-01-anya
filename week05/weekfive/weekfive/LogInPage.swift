@@ -3,7 +3,7 @@ import SwiftUI
 
 struct LogInPage: View {
     @AppStorage("username") var username: String = "stranger"
-    @State private var inputUsername: String = "stranger"
+    @State private var inputUsername: String = ""
 
     var body: some View {
         NavigationView {
@@ -16,7 +16,7 @@ struct LogInPage: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
 
                 HStack {
-                    NavigationLink(destination: NavigationPage(username: inputUsername)) {
+                    NavigationLink(destination: StudyMusicPage(username: inputUsername)) {
                         Text("Log in")
                     }
                     .buttonStyle(BorderlessButtonStyle())

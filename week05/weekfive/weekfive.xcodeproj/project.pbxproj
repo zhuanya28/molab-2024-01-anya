@@ -12,7 +12,10 @@
 		A72E90DE2B925863006F5B0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A72E90DD2B925863006F5B0B /* Assets.xcassets */; };
 		A72E90E12B925863006F5B0B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A72E90E02B925863006F5B0B /* Preview Assets.xcassets */; };
 		A72E90EA2B926764006F5B0B /* LogInPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72E90E92B926764006F5B0B /* LogInPage.swift */; };
-		A72E90EC2B926803006F5B0B /* NavigationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72E90EB2B926803006F5B0B /* NavigationPage.swift */; };
+		A72E90F22B93AE03006F5B0B /* StudyMusicPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72E90F12B93AE03006F5B0B /* StudyMusicPage.swift */; };
+		A72E91032B93BA25006F5B0B /* Reading.wav in Resources */ = {isa = PBXBuildFile; fileRef = A72E91002B93BA24006F5B0B /* Reading.wav */; };
+		A72E91042B93BA25006F5B0B /* Writing.wav in Resources */ = {isa = PBXBuildFile; fileRef = A72E91012B93BA24006F5B0B /* Writing.wav */; };
+		A72E91052B93BA25006F5B0B /* Coding.wav in Resources */ = {isa = PBXBuildFile; fileRef = A72E91022B93BA25006F5B0B /* Coding.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,7 +25,10 @@
 		A72E90DD2B925863006F5B0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A72E90E02B925863006F5B0B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A72E90E92B926764006F5B0B /* LogInPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInPage.swift; sourceTree = "<group>"; };
-		A72E90EB2B926803006F5B0B /* NavigationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationPage.swift; sourceTree = "<group>"; };
+		A72E90F12B93AE03006F5B0B /* StudyMusicPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyMusicPage.swift; sourceTree = "<group>"; };
+		A72E91002B93BA24006F5B0B /* Reading.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Reading.wav; sourceTree = "<group>"; };
+		A72E91012B93BA24006F5B0B /* Writing.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Writing.wav; sourceTree = "<group>"; };
+		A72E91022B93BA25006F5B0B /* Coding.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Coding.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +64,8 @@
 				A72E90D92B925860006F5B0B /* weekfiveApp.swift */,
 				A72E90DB2B925860006F5B0B /* ContentView.swift */,
 				A72E90E92B926764006F5B0B /* LogInPage.swift */,
-				A72E90EB2B926803006F5B0B /* NavigationPage.swift */,
+				A72E90F12B93AE03006F5B0B /* StudyMusicPage.swift */,
+				A72E90FF2B93BA08006F5B0B /* Resources */,
 				A72E90DD2B925863006F5B0B /* Assets.xcassets */,
 				A72E90DF2B925863006F5B0B /* Preview Content */,
 			);
@@ -71,6 +78,16 @@
 				A72E90E02B925863006F5B0B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A72E90FF2B93BA08006F5B0B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A72E91022B93BA25006F5B0B /* Coding.wav */,
+				A72E91002B93BA24006F5B0B /* Reading.wav */,
+				A72E91012B93BA24006F5B0B /* Writing.wav */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,8 +148,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A72E91032B93BA25006F5B0B /* Reading.wav in Resources */,
 				A72E90E12B925863006F5B0B /* Preview Assets.xcassets in Resources */,
 				A72E90DE2B925863006F5B0B /* Assets.xcassets in Resources */,
+				A72E91042B93BA25006F5B0B /* Writing.wav in Resources */,
+				A72E91052B93BA25006F5B0B /* Coding.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,10 +163,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A72E90EC2B926803006F5B0B /* NavigationPage.swift in Sources */,
 				A72E90EA2B926764006F5B0B /* LogInPage.swift in Sources */,
 				A72E90DC2B925860006F5B0B /* ContentView.swift in Sources */,
 				A72E90DA2B925860006F5B0B /* weekfiveApp.swift in Sources */,
+				A72E90F22B93AE03006F5B0B /* StudyMusicPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

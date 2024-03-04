@@ -60,7 +60,7 @@ struct StudyMusicPage: View {
 
                 Spacer()
             }
-            .navigationBarTitle("Study Music Timer")
+            .navigationBarTitle("\(username)'s study corner")
         }
         .onChange(of: selectedMode) { newMode, _ in
             resetTimerAndStopSound()

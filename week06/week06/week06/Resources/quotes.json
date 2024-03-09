@@ -1,0 +1,12 @@
+{
+  "quotes": [
+      {"id": "1", "category": "study", "text": "The only way to do great work is to love what you do. - Steve Jobs"},
+      {"id": "2", "category": "study", "text": "Education is the most powerful weapon which you can use to change the world. - Nelson Mandela"},
+      {"id": "3", "category": "life", "text": "Life is what happens when you're busy making other plans. - John Lennon"},
+      {"id": "4", "category": "life", "text": "Don't count the days, make the days count. - Muhammad Ali"},
+      {"id": "5", "category": "work", "text": "Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. - Steve Jobs"},
+      {"id": "6", "category": "work", "text": "Success usually comes to those who are too busy to be looking for it. - Henry David Thoreau"},
+      {"id": "7", "category": "inspiration", "text": "The future belongs to those who believe in the beauty of their dreams. - Eleanor Roosevelt"}
+      ]
+}
+

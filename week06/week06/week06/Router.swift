@@ -20,11 +20,12 @@ struct Router: App {
 }
 
 class PageModel: ObservableObject {
-    @Published var pageTag: PageEnum = .Page1
+    @Published var pageTag: PageEnum = .LogIn
 }
 
 enum PageEnum {
     case Page1
     case Page2
+    case LogIn
 }
 

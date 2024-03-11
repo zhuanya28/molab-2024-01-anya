@@ -11,43 +11,21 @@ struct Page1: View {
     
     @State private var countdownCounter = 0
     @State private var isCountingDown = true
+    @State private var currentAudioFileName: String?
+    @State private var currentAudioIndex: Int = 0
+    
+    
+    @State private var currentTime: TimeInterval = 0
+     @State private var totalTime: TimeInterval = 0
     
     let modes: [StudyMode] = [.reading, .coding, .writing]
 
     var body: some View {
         ZStack {
             backgroundView(for: selectedMode)
-
             VStack {
+                
                 Spacer()
-                Text("Time remaining: \(timeRemaining) seconds")
-                    .padding()
-
-                Button(action: {
-                    startTimer()
-                    self.playSound()
-                }) {
-                    Text("Start Timer")
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(Color.black)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                }
-                .padding()
-
-                Button(action: {
-                    stopTimer()
-                }) {
-                    Text("Stop Timer")
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(Color.red)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                }
-                .padding()
-
                 Picker("Select Study Mode", selection: $selectedMode) {
                     ForEach(modes, id: \.self) { mode in
                         Text(mode.rawValue)
@@ -55,22 +33,79 @@ struct Page1: View {
                 }
                 .pickerStyle(SegmentedPickerStyle())
                 .padding()
-
+                
+                
+                Text("Time remaining: \(timeRemaining) seconds")
+                    .padding()
+                Text("Now Playing: \(currentAudioFileName ?? "No audio file")")
+                                    .padding()
+                
+                
+                HStack {
+                    Button(action: {
+                        playPreviousSound()
+                    }) {
+                        Image(systemName: "backward.fill")
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color.white)
+                            .foregroundColor(.black)
+                            .cornerRadius(10)
+                    }
+                    .padding()
+                    
+                    Button(action: {
+                        if isTimerRunning {
+                            self.stopTimer()
+                        } else {
+                            startTimer()
+                            self.playSound()
+                        }
+                    }) {
+                        Image(systemName: isTimerRunning ? "pause.fill" : "play.fill")
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color.red)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                    }
+                    .padding()
+                    
+                    
+                    Button(action: {
+                        
+                        playNextSound()
+                    }) {
+                        Image(systemName: "forward.fill")
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color.white)
+                            .foregroundColor(.black)
+                            .cornerRadius(10)
+                    }
+                    .padding()
+                }
+                
+                MusicProgressBar(currentTime: $currentTime, totalTime: $totalTime)
+                                    .padding()
+                
+               
+                
                 Spacer()
             }
             .navigationBarTitle("study corner")
         }
         .onChange(of: selectedMode) { newMode, _ in
             resetTimerAndStopSound()
+            
         }
         .onAppear {
             timeRemaining = selectedMode.duration
         }
         .onDisappear {
-                   stopSound()
+            stopSound()
         }
     }
-
 
     private func startTimer() {
         guard !isTimerRunning else { return }
@@ -82,6 +117,7 @@ struct Page1: View {
             if timeRemaining > 0 {
                 timeRemaining -= 1
                 countdownCounter += 1
+                currentTime = player?.currentTime ?? 0
             } else {
                 stopTimer()
                 playSound()
@@ -109,19 +145,33 @@ struct Page1: View {
     private func backgroundView(for mode: StudyMode) -> some View {
         switch mode {
         case .reading:
-            return Color.green.ignoresSafeArea()
+            return Color.cyan.ignoresSafeArea()
         case .coding:
-            return Color.yellow.ignoresSafeArea()
+            return Color.mint.ignoresSafeArea()
         case .writing:
-            return Color.orange.ignoresSafeArea()
+            return Color.teal.ignoresSafeArea()
+        }
+    }
+    
+    private var audioFiles: [String] {
+        switch selectedMode {
+        case .reading:
+            return ["reading1", "reading2", "reading3"]
+        case .coding:
+            return ["coding1", "coding2", "coding3"]
+        case .writing:
+            return ["writing1", "writing2", "writing3"]
         }
     }
 
     func playSound() {
-        guard let soundURL = Bundle.main.url(forResource: selectedMode.rawValue, withExtension: "wav") else {
+        let randomAudioFile = audioFiles[currentAudioIndex]
+
+        currentAudioFileName = randomAudioFile
+
+        guard let soundURL = Bundle.main.url(forResource: randomAudioFile, withExtension: "wav") else {
             return
         }
-
 
         if let player = player, player.isPlaying {
             return
@@ -129,7 +179,9 @@ struct Page1: View {
 
         do {
             player = try AVAudioPlayer(contentsOf: soundURL)
+            totalTime = player?.duration ?? 0
             player?.play()
+            
         } catch {
             print("Failed to load the sound: \(error)")
         }
@@ -137,6 +189,20 @@ struct Page1: View {
 
     func stopSound() {
         player?.stop()
+        currentTime = 0
+           totalTime = 0
+    }
+    
+    func playNextSound() {
+        currentAudioIndex = (currentAudioIndex + 1) % audioFiles.count
+        stopSound()
+        playSound()
+    }
+
+    func playPreviousSound() {
+        currentAudioIndex = (currentAudioIndex - 1 + audioFiles.count) % audioFiles.count
+        stopSound()
+        playSound()
     }
 }
 
@@ -165,49 +231,6 @@ struct Clock: View {
     }
 }
 
-struct ProgressTrack: View {
-    var body: some View {
-        Circle()
-            .fill(Color.clear)
-            .frame(width: 250, height: 250)
-            .overlay(
-                Circle().stroke(Color.black, lineWidth: 15)
-            )
-    }
-}
-
-struct ProgressBar: View {
-    var counter: Int
-    var countTo: Int
-    
-    var body: some View {
-        Circle()
-            .fill(Color.clear)
-            .frame(width: 250, height: 250)
-            .overlay(
-                Circle().trim(from: 0, to: (progress()))
-                    .stroke(
-                        style: StrokeStyle(
-                            lineWidth: 15,
-                            lineCap: .round,
-                            lineJoin: .round
-                        )
-                    )
-                    .foregroundColor(
-                        (completed() ? Color.red : Color.green)
-                    )
-            )
-    }
-    
-    func completed() -> Bool {
-        return progress() == 1
-    }
-    
-    func progress() -> CGFloat {
-        return (CGFloat(counter) / CGFloat(countTo))
-    }
-}
-
 enum StudyMode: String, CaseIterable {
     case reading = "Reading"
     case coding = "Coding"
@@ -224,6 +247,54 @@ enum StudyMode: String, CaseIterable {
         }
     }
 }
+
+struct MusicProgressBar: View {
+    @Binding var currentTime: TimeInterval
+    @Binding var totalTime: TimeInterval
+
+    var body: some View {
+        VStack {
+            CircularProgressBar(progress: CGFloat(currentTime / totalTime))
+                .padding()
+
+            HStack {
+                Text("Current Time: \(formattedTime(currentTime))")
+                Spacer()
+                Text("Total Time: \(formattedTime(totalTime))")
+            }
+            .padding()
+        }
+    }
+
+    private func formattedTime(_ time: TimeInterval) -> String {
+        let minutes = Int(time / 60)
+        let seconds = Int(time.truncatingRemainder(dividingBy: 60))
+        return String(format: "%02d:%02d", minutes, seconds)
+    }
+}
+
+struct CircularProgressBar: View {
+    var progress: CGFloat
+
+    var body: some View {
+        GeometryReader { geometry in
+            ZStack {
+                Circle()
+                    .stroke(lineWidth: 10.0)
+                    .opacity(0.3)
+                    .foregroundColor(Color.gray)
+
+                Circle()
+                    .trim(from: 0.0, to: progress)
+                    .stroke(style: StrokeStyle(lineWidth: 10.0, lineCap: .round, lineJoin: .round))
+                    .foregroundColor(Color.blue)
+                    .rotationEffect(Angle(degrees: -90))
+            }
+            .frame(width: geometry.size.width, height: geometry.size.height)
+        }
+    }
+}
+
 
 struct Page1_Previews: PreviewProvider {
     static var previews: some View {

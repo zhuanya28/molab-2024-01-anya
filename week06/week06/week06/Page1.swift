@@ -3,28 +3,21 @@ import AVFoundation
 
 struct Page1: View {
     @State private var selectedMode = StudyMode.reading
-    @State private var timeRemaining = 0
-    @State private var timer: Timer?
-    @State private var isTimerRunning = false
+    @State private var isMusicPlaying = false
 
     @State private var player: AVAudioPlayer?
-    
-    @State private var countdownCounter = 0
-    @State private var isCountingDown = true
     @State private var currentAudioFileName: String?
     @State private var currentAudioIndex: Int = 0
-    
-    
     @State private var currentTime: TimeInterval = 0
-     @State private var totalTime: TimeInterval = 0
-    
+    @State private var totalTime: TimeInterval = 0
+    @State private var timer: Timer?
+
     let modes: [StudyMode] = [.reading, .coding, .writing]
 
     var body: some View {
         ZStack {
             backgroundView(for: selectedMode)
             VStack {
-                
                 Spacer()
                 Picker("Select Study Mode", selection: $selectedMode) {
                     ForEach(modes, id: \.self) { mode in
@@ -33,14 +26,10 @@ struct Page1: View {
                 }
                 .pickerStyle(SegmentedPickerStyle())
                 .padding()
-                
-                
-                Text("Time remaining: \(timeRemaining) seconds")
-                    .padding()
+
                 Text("Now Playing: \(currentAudioFileName ?? "No audio file")")
-                                    .padding()
-                
-                
+                    .padding()
+
                 HStack {
                     Button(action: {
                         playPreviousSound()
@@ -53,16 +42,15 @@ struct Page1: View {
                             .cornerRadius(10)
                     }
                     .padding()
-                    
+
                     Button(action: {
-                        if isTimerRunning {
-                            self.stopTimer()
+                        if isMusicPlaying {
+                            self.stopSound()
                         } else {
-                            startTimer()
                             self.playSound()
                         }
                     }) {
-                        Image(systemName: isTimerRunning ? "pause.fill" : "play.fill")
+                        Image(systemName: isMusicPlaying ? "pause.fill" : "play.fill")
                             .frame(maxWidth: .infinity)
                             .padding()
                             .background(Color.red)
@@ -70,10 +58,8 @@ struct Page1: View {
                             .cornerRadius(10)
                     }
                     .padding()
-                    
-                    
+
                     Button(action: {
-                        
                         playNextSound()
                     }) {
                         Image(systemName: "forward.fill")
@@ -85,61 +71,25 @@ struct Page1: View {
                     }
                     .padding()
                 }
-                
+
                 MusicProgressBar(currentTime: $currentTime, totalTime: $totalTime)
-                                    .padding()
-                
-               
-                
+                    .padding()
+
                 Spacer()
             }
             .navigationBarTitle("study corner")
         }
         .onChange(of: selectedMode) { newMode, _ in
-            resetTimerAndStopSound()
-            
+            stopSound()
         }
         .onAppear {
-            timeRemaining = selectedMode.duration
+            loadAudioFile()
+            startTimer()
         }
         .onDisappear {
             stopSound()
+            stopTimer()
         }
-    }
-
-    private func startTimer() {
-        guard !isTimerRunning else { return }
-
-        timeRemaining = selectedMode.duration
-        isTimerRunning = true
-
-        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
-            if timeRemaining > 0 {
-                timeRemaining -= 1
-                countdownCounter += 1
-                currentTime = player?.currentTime ?? 0
-            } else {
-                stopTimer()
-                playSound()
-            }
-        }
-    }
-
-    private func stopTimer() {
-        isTimerRunning = false
-        timer?.invalidate()
-        stopSound()
-    }
-
-    private func resetTimerAndStopSound() {
-        stopTimer()
-        timeRemaining = selectedMode.duration
-        countdownCounter = 0
-    }
-
-    private func updateCountdownTimer() {
-        resetTimerAndStopSound()
-        isCountingDown = true
     }
 
     private func backgroundView(for mode: StudyMode) -> some View {
@@ -152,7 +102,7 @@ struct Page1: View {
             return Color.teal.ignoresSafeArea()
         }
     }
-    
+
     private var audioFiles: [String] {
         switch selectedMode {
         case .reading:
@@ -163,10 +113,28 @@ struct Page1: View {
             return ["writing1", "writing2", "writing3"]
         }
     }
+    
+    private func loadAudioFile() {
+        let randomAudioFile = audioFiles[currentAudioIndex]
+        
+        currentAudioFileName = randomAudioFile
+        
+        guard let soundURL = Bundle.main.url(forResource: randomAudioFile, withExtension: "wav") else {
+            return
+        }
+        
+        do {
+            player = try AVAudioPlayer(contentsOf: soundURL)
+            totalTime = player?.duration ?? 0
+        } catch {
+            print("Failed to load the sound: \(error)")
+        }
+    }
 
-    func playSound() {
+    private func playSound() {
         let randomAudioFile = audioFiles[currentAudioIndex]
 
+        isMusicPlaying = true
         currentAudioFileName = randomAudioFile
 
         guard let soundURL = Bundle.main.url(forResource: randomAudioFile, withExtension: "wav") else {
@@ -181,28 +149,39 @@ struct Page1: View {
             player = try AVAudioPlayer(contentsOf: soundURL)
             totalTime = player?.duration ?? 0
             player?.play()
-            
         } catch {
             print("Failed to load the sound: \(error)")
         }
     }
 
-    func stopSound() {
+    private func stopSound() {
         player?.stop()
+        isMusicPlaying = false
         currentTime = 0
-           totalTime = 0
+        totalTime = 0
     }
-    
-    func playNextSound() {
+
+    private func playNextSound() {
         currentAudioIndex = (currentAudioIndex + 1) % audioFiles.count
         stopSound()
         playSound()
     }
 
-    func playPreviousSound() {
+    private func playPreviousSound() {
         currentAudioIndex = (currentAudioIndex - 1 + audioFiles.count) % audioFiles.count
         stopSound()
         playSound()
+    }
+
+    private func startTimer() {
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+            guard isMusicPlaying else { return }
+            currentTime = player?.currentTime ?? 0
+        }
+    }
+
+    private func stopTimer() {
+        timer?.invalidate()
     }
 }
 
@@ -239,66 +218,17 @@ enum StudyMode: String, CaseIterable {
     var duration: Int {
         switch self {
         case .reading:
-            return 300 // 5 minutes for reading
+            return 200
         case .coding:
-            return 600 // 10 minutes for coding
+            return 400
         case .writing:
-            return 450 // 7.5 minutes for writing
+            return 450
         }
     }
 }
-
-struct MusicProgressBar: View {
-    @Binding var currentTime: TimeInterval
-    @Binding var totalTime: TimeInterval
-
-    var body: some View {
-        VStack {
-            CircularProgressBar(progress: CGFloat(currentTime / totalTime))
-                .padding()
-
-            HStack {
-                Text("Current Time: \(formattedTime(currentTime))")
-                Spacer()
-                Text("Total Time: \(formattedTime(totalTime))")
-            }
-            .padding()
-        }
-    }
-
-    private func formattedTime(_ time: TimeInterval) -> String {
-        let minutes = Int(time / 60)
-        let seconds = Int(time.truncatingRemainder(dividingBy: 60))
-        return String(format: "%02d:%02d", minutes, seconds)
-    }
-}
-
-struct CircularProgressBar: View {
-    var progress: CGFloat
-
-    var body: some View {
-        GeometryReader { geometry in
-            ZStack {
-                Circle()
-                    .stroke(lineWidth: 10.0)
-                    .opacity(0.3)
-                    .foregroundColor(Color.gray)
-
-                Circle()
-                    .trim(from: 0.0, to: progress)
-                    .stroke(style: StrokeStyle(lineWidth: 10.0, lineCap: .round, lineJoin: .round))
-                    .foregroundColor(Color.blue)
-                    .rotationEffect(Angle(degrees: -90))
-            }
-            .frame(width: geometry.size.width, height: geometry.size.height)
-        }
-    }
-}
-
 
 struct Page1_Previews: PreviewProvider {
     static var previews: some View {
         Page1()
     }
 }
-

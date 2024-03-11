@@ -24,11 +24,12 @@ struct ContentView: View {
             Spacer()
             
     
-            HStack {
+            VStack {
                 Button(action: {
                     pageModel.pageTag = .Page1
                 }) {
                     Text("Focus")
+                        .foregroundColor(.purple)
                     
                 }
                 
@@ -36,6 +37,7 @@ struct ContentView: View {
                     pageModel.pageTag = .Page2
                 }) {
                     Text("Encouragement")
+                        .foregroundColor(.black)
                 }
             }
         }

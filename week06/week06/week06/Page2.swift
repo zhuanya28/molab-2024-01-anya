@@ -51,15 +51,22 @@ struct Page2: View {
             .onChange(of: selectedCategory) { newValue, oldValue in
                 regenerateQuote()
             }
-
-            Button("Generate Quote") {
-                regenerateQuote()
-            }
-            .padding()
+            Spacer()
 
             Text(currentQuote)
                 .font(.headline)
                 .padding()
+            Spacer()
+            
+            Button("Generate Quote") {
+                regenerateQuote()
+            }
+            .padding()
+            .font(.headline)
+            .foregroundColor(.white)
+            .background(Color.black)
+            .cornerRadius(10)
+
         }
         .onAppear {
             quoteViewModel.loadQuotes()
@@ -79,4 +86,12 @@ struct Page2: View {
         return categoryQuotes.isEmpty ? nil : categoryQuotes
     }
 }
+
+
+#Preview {
+    Page2()
+}
+
+
+//generation of the JSON is entirely chatgpt, except for the format
 

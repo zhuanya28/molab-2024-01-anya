@@ -17,7 +17,7 @@ struct MusicProgressBar: View {
                            Text(formattedTime(currentTime))
                                .font(.system(size: 24))
                                .fontWeight(.bold)
-                               .foregroundColor(.yellow)
+                               .foregroundColor(.black)
                        }
             .padding()
             HStack {
@@ -51,7 +51,7 @@ struct CircularProgressBar<Content: View>: View {
                 Circle()
                     .trim(from: 0.0, to: progress)
                     .stroke(style: StrokeStyle(lineWidth: 10.0, lineCap: .round, lineJoin: .round))
-                    .foregroundColor(Color.yellow)
+                    .foregroundColor(Color.black)
                     .rotationEffect(Angle(degrees: -90))
 
                 content

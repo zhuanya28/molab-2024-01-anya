@@ -99,7 +99,7 @@ struct Page1: View {
         case .coding:
             return Color.mint.ignoresSafeArea()
         case .writing:
-            return Color.teal.ignoresSafeArea()
+            return Color.blue.ignoresSafeArea()
         }
     }
 

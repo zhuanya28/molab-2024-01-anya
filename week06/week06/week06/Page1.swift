@@ -66,6 +66,9 @@ struct Page1: View {
         .onAppear {
             timeRemaining = selectedMode.duration
         }
+        .onDisappear {
+                   stopSound()
+        }
     }
 
 

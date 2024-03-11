@@ -1,14 +1,13 @@
 import SwiftUI
 
 struct Quote: Codable {
-    let study: [String]
-    let life: [String]
-    let work: [String]
-    let inspiration: [String]
+    let id: String
+    let category: String
+    let text: String
 }
 
 class QuoteViewModel: ObservableObject {
-    @Published var quotes: Quote?
+    @Published var quotes: [Quote] = []
 
     init() {
         loadQuotes()
@@ -19,7 +18,14 @@ class QuoteViewModel: ObservableObject {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
                 let decoder = JSONDecoder()
-                quotes = try decoder.decode(Quote.self, from: data)
+                let quotesData = try decoder.decode([String: [Quote]].self, from: data)
+
+                // Extract quotes array from the dictionary
+                if let quotesArray = quotesData["quotes"] {
+                    quotes = quotesArray
+                } else {
+                    print("Error: Could not find 'quotes' key in the JSON.")
+                }
             } catch {
                 print("Error loading JSON: \(error)")
             }
@@ -42,11 +48,12 @@ struct Page2: View {
             }
             .pickerStyle(SegmentedPickerStyle())
             .padding()
+            .onChange(of: selectedCategory) { newValue, oldValue in
+                regenerateQuote()
+            }
 
             Button("Generate Quote") {
-                if let categoryQuotes = getCategoryQuotes() {
-                    currentQuote = categoryQuotes.randomElement() ?? ""
-                }
+                regenerateQuote()
             }
             .padding()
 
@@ -56,23 +63,20 @@ struct Page2: View {
         }
         .onAppear {
             quoteViewModel.loadQuotes()
-            currentQuote = getCategoryQuotes()?.first ?? ""
+            regenerateQuote()
         }
         .navigationTitle("Page 2")
     }
 
-    func getCategoryQuotes() -> [String]? {
-        switch selectedCategory {
-        case "study":
-            return quoteViewModel.quotes?.study
-        case "life":
-            return quoteViewModel.quotes?.life
-        case "work":
-            return quoteViewModel.quotes?.work
-        case "inspiration":
-            return quoteViewModel.quotes?.inspiration
-        default:
-            return nil
+    private func regenerateQuote() {
+        if let categoryQuotes = getCategoryQuotes() {
+            currentQuote = categoryQuotes.randomElement()?.text ?? ""
         }
     }
+
+    private func getCategoryQuotes() -> [Quote]? {
+        let categoryQuotes = quoteViewModel.quotes.filter { $0.category == selectedCategory }
+        return categoryQuotes.isEmpty ? nil : categoryQuotes
+    }
 }
+

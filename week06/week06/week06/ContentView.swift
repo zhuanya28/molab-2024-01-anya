@@ -8,23 +8,30 @@
 import SwiftUI
 
 struct ContentView: View {
-//    var username: String
+    var username: String
     @EnvironmentObject var pageModel: PageModel;
     var body: some View {
         VStack {
-            
-            
             switch pageModel.pageTag {
             case .Page1:
                 Page1()
             case .Page2:
                 Page2()
+            case .LogIn:
+                LogInPage()
             }
            
             Spacer()
             
     
             VStack {
+                Button(action: {
+                    pageModel.pageTag = .LogIn
+                }) {
+                    Text("Profile")
+                        .foregroundColor(.purple)
+                    
+                }
                 Button(action: {
                     pageModel.pageTag = .Page1
                 }) {
@@ -45,6 +52,6 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    ContentView(username: "stranger")
         .environmentObject(PageModel())
 }

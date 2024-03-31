@@ -1,0 +1,47 @@
+{
+  "quotes": [
+    {"id": "1", "category": "study", "text": "The only way to do great work is to love what you do. - Steve Jobs"},
+    {"id": "2", "category": "study", "text": "Education is the most powerful weapon which you can use to change the world. - Nelson Mandela"},
+    {"id": "3", "category": "study", "text": "Learning is a treasure that will follow its owner everywhere. - Chinese Proverb"},
+    {"id": "4", "category": "study", "text": "Knowledge is power. Information is liberating. Education is the premise of progress, in every society, in every family. - Kofi Annan"},
+    {"id": "5", "category": "study", "text": "The mind is not a vessel to be filled, but a fire to be kindled. - Plutarch"},
+    {"id": "6", "category": "study", "text": "Strive for progress, not perfection. - Unknown"},
+    {"id": "7", "category": "study", "text": "Success is stumbling from failure to failure with no loss of enthusiasm. - Winston S. Churchill"},
+    {"id": "8", "category": "study", "text": "Do not wait to strike till the iron is hot, but make it hot by striking. - William Butler Yeats"},
+    {"id": "9", "category": "study", "text": "The beautiful thing about learning is that no one can take it away from you. - B.B. King"},
+    {"id": "10", "category": "study", "text": "The expert in anything was once a beginner. - Helen Hayes"},
+    
+    {"id": "11", "category": "life", "text": "Life is what happens when you're busy making other plans. - John Lennon"},
+    {"id": "12", "category": "life", "text": "Don't count the days, make the days count. - Muhammad Ali"},
+    {"id": "13", "category": "life", "text": "Life is either a daring adventure or nothing at all. - Helen Keller"},
+    {"id": "14", "category": "life", "text": "In three words I can sum up everything I've learned about life: it goes on. - Robert Frost"},
+    {"id": "15", "category": "life", "text": "Life is really simple, but we insist on making it complicated. - Confucius"},
+    {"id": "16", "category": "life", "text": "The purpose of our lives is to be happy. - Dalai Lama"},
+    {"id": "17", "category": "life", "text": "Life is either a great adventure or nothing. - Helen Keller"},
+    {"id": "18", "category": "life", "text": "Life is short, and it's up to you to make it sweet. - Sarah Louise Delany"},
+    {"id": "19", "category": "life", "text": "Life is a journey that must be traveled no matter how bad the roads and accommodations. - Oliver Goldsmith"},
+    {"id": "20", "category": "life", "text": "Life is what happens when you're busy making other plans. - John Lennon"},
+    
+    {"id": "21", "category": "work", "text": "Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. - Steve Jobs"},
+    {"id": "22", "category": "work", "text": "Success usually comes to those who are too busy to be looking for it. - Henry David Thoreau"},
+    {"id": "23", "category": "work", "text": "Opportunities don't happen. You create them. - Chris Grosser"},
+    {"id": "24", "category": "work", "text": "The only place where success comes before work is in the dictionary. - Vidal Sassoon"},
+    {"id": "25", "category": "work", "text": "The only limit to our realization of tomorrow will be our doubts of today. - Franklin D. Roosevelt"},
+    {"id": "26", "category": "work", "text": "Don't be pushed around by the fears in your mind. Be led by the dreams in your heart. - Roy T. Bennett"},
+    {"id": "27", "category": "work", "text": "The only thing standing between you and your goal is the story you keep telling yourself as to why you can't achieve it. - Jordan Belfort"},
+    {"id": "28", "category": "work", "text": "You are never too old to set another goal or to dream a new dream. - C.S. Lewis"},
+    {"id": "29", "category": "work", "text": "The only limit to our realization of tomorrow will be our doubts of today. - Franklin D. Roosevelt"},
+    {"id": "30", "category": "work", "text": "Don't watch the clock; do what it does. Keep going. - Sam Levenson"},
+    
+    {"id": "31", "category": "inspiration", "text": "The future belongs to those who believe in the beauty of their dreams. - Eleanor Roosevelt"},
+    {"id": "32", "category": "inspiration", "text": "Don't be pushed around by the fears in your mind. Be led by the dreams in your heart. - Roy T. Bennett"},
+    {"id": "33", "category": "inspiration", "text": "Believe you can and you're halfway there. -Theodore Roosevelt"},
+    {"id": "34", "category": "inspiration", "text": "The only limit to our realization of tomorrow will be our doubts of today. - Franklin D. Roosevelt"},
+    {"id": "35", "category": "inspiration", "text": "Your time is limited, don't waste it living someone else's life. - Steve Jobs"},
+    {"id": "36", "category": "inspiration", "text": "Life is what happens when you're busy making other plans. - John Lennon"},
+    {"id": "37", "category": "inspiration", "text": "Do not wait to strike till the iron is hot, but make it hot by striking. - William Butler Yeats"},
+    {"id": "38", "category": "inspiration", "text": "The best way to predict the future is to create it. - Peter Drucker"},
+    {"id": "39", "category": "inspiration", "text": "It always seems impossible until it's done. - Nelson Mandela"},
+    {"id": "40", "category": "inspiration", "text": "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston S. Churchill"}
+  ]
+}

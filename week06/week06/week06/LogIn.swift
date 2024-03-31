@@ -1,14 +1,10 @@
-//
-//  LogIn.swift
-//  week06
-//
-//  Created by anya zhukova on 3/11/24.
-//
-
 // LogInPage.swift
+
+
 import SwiftUI
 
-struct LogIn: View {
+struct LogInPage: View {
+
     @AppStorage("username") var username: String = "stranger"
     @State private var inputUsername: String = ""
 
@@ -23,8 +19,9 @@ struct LogIn: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
 
                 HStack {
-                    NavigationLink(destination: StudyMusicPage(username: inputUsername)) {
-                        Text("Log in")
+                    Button(action: {
+                    }) {
+                        Text("Set name")
                     }
                     .buttonStyle(BorderlessButtonStyle())
                     .foregroundColor(.blue)
@@ -50,10 +47,9 @@ struct LogIn: View {
     }
 }
 
-struct LogIn_Previews: PreviewProvider {
+struct LogInPage_Previews: PreviewProvider {
     static var previews: some View {
-        LogIn()
+        LogInPage()
     }
 }
-
 

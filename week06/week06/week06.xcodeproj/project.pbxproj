@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A77C93DA2B9FAB7D00A92072 /* LogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77C93D92B9FAB7D00A92072 /* LogIn.swift */; };
+		A710B9532BBA21BA00600102 /* LogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = A710B9522BBA21BA00600102 /* LogIn.swift */; };
 		A7C1A07E2B9F2D5E0055066C /* quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = A7C1A07D2B9F2D5E0055066C /* quotes.json */; };
 		A7C1A0882B9F4A870055066C /* reading1.wav in Resources */ = {isa = PBXBuildFile; fileRef = A7C1A07F2B9F4A870055066C /* reading1.wav */; };
 		A7C1A0892B9F4A870055066C /* writing2.wav in Resources */ = {isa = PBXBuildFile; fileRef = A7C1A0802B9F4A870055066C /* writing2.wav */; };
@@ -29,7 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A77C93D92B9FAB7D00A92072 /* LogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogIn.swift; sourceTree = "<group>"; };
+		A710B9522BBA21BA00600102 /* LogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogIn.swift; sourceTree = "<group>"; };
 		A7C1A07D2B9F2D5E0055066C /* quotes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quotes.json; sourceTree = "<group>"; };
 		A7C1A07F2B9F4A870055066C /* reading1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = reading1.wav; sourceTree = "<group>"; };
 		A7C1A0802B9F4A870055066C /* writing2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = writing2.wav; sourceTree = "<group>"; };
@@ -86,7 +86,7 @@
 				A7F622D12B9BB9CB003613BD /* week06App.swift */,
 				A7F622DF2B9BB9F8003613BD /* Router.swift */,
 				A7F622D32B9BB9CB003613BD /* ContentView.swift */,
-				A77C93D92B9FAB7D00A92072 /* LogIn.swift */,
+				A710B9522BBA21BA00600102 /* LogIn.swift */,
 				A7F622E12B9BBF59003613BD /* Page1.swift */,
 				A7F622E32B9BBF68003613BD /* Page2.swift */,
 				A7C1A0912B9F509D0055066C /* MusicProgressBar.swift */,
@@ -203,7 +203,7 @@
 				A7C1A0922B9F509D0055066C /* MusicProgressBar.swift in Sources */,
 				A7F622E22B9BBF59003613BD /* Page1.swift in Sources */,
 				A7F622D42B9BB9CB003613BD /* ContentView.swift in Sources */,
-				A77C93DA2B9FAB7D00A92072 /* LogIn.swift in Sources */,
+				A710B9532BBA21BA00600102 /* LogIn.swift in Sources */,
 				A7F622E02B9BB9F8003613BD /* Router.swift in Sources */,
 				A7F622D22B9BB9CB003613BD /* week06App.swift in Sources */,
 				A7F622E42B9BBF68003613BD /* Page2.swift in Sources */,

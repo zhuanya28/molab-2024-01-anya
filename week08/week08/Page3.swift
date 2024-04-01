@@ -16,7 +16,7 @@ struct Page3: View {
                     Color.clear
                     ImageView(uiImage: image)
                 }
-                .background(backgroundColor) // Apply the background color here
+                .background(backgroundColor)
                 .edgesIgnoringSafeArea(.all)
                 
                 Button("Change Photo") {

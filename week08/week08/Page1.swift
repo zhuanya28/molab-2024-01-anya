@@ -2,7 +2,7 @@ import SwiftUI
 import AVFoundation
 
 struct Page1: View {
-    var username: String
+    @EnvironmentObject var pageModel: PageModel
     @State private var selectedMode = StudyMode.reading
     @State private var isMusicPlaying = false
 
@@ -16,69 +16,71 @@ struct Page1: View {
     let modes: [StudyMode] = [.reading, .coding, .writing]
 
     var body: some View {
-        ZStack {
-            backgroundView(for: selectedMode)
-            VStack {
-                Spacer()
-                Picker("Select Study Mode", selection: $selectedMode) {
-                    ForEach(modes, id: \.self) { mode in
-                        Text(mode.rawValue)
-                    }
-                }
-                .pickerStyle(SegmentedPickerStyle())
-                .padding()
 
-                Text("Now Playing: \(currentAudioFileName ?? "No audio file")")
-                    .padding()
-
-                HStack {
-                    Button(action: {
-                        playPreviousSound()
-                    }) {
-                        Image(systemName: "backward.fill")
-                            .frame(maxWidth: .infinity)
-                            .padding()
-                            .background(Color.white)
-                            .foregroundColor(.black)
-                            .cornerRadius(10)
-                    }
-                    .padding()
-
-                    Button(action: {
-                        if isMusicPlaying {
-                            self.stopSound()
-                        } else {
-                            self.playSound()
+            ZStack {
+              
+                backgroundView(for: selectedMode)
+                VStack {
+                    Text("Welcome, \(pageModel.username)")
+                    Spacer()
+                    Picker("Select Study Mode", selection: $selectedMode) {
+                        ForEach(modes, id: \.self) { mode in
+                            Text(mode.rawValue)
                         }
-                    }) {
-                        Image(systemName: isMusicPlaying ? "pause.fill" : "play.fill")
-                            .frame(maxWidth: .infinity)
-                            .padding()
-                            .background(Color.red)
-                            .foregroundColor(.white)
-                            .cornerRadius(10)
                     }
+                    .pickerStyle(SegmentedPickerStyle())
                     .padding()
-
-                    Button(action: {
-                        playNextSound()
-                    }) {
-                        Image(systemName: "forward.fill")
-                            .frame(maxWidth: .infinity)
-                            .padding()
-                            .background(Color.white)
-                            .foregroundColor(.black)
-                            .cornerRadius(10)
+                    
+                    Text("Now Playing: \(currentAudioFileName ?? "No audio file")")
+                        .padding()
+                    
+                    HStack {
+                        Button(action: {
+                            playPreviousSound()
+                        }) {
+                            Image(systemName: "backward.fill")
+                                .frame(maxWidth: .infinity)
+                                .padding()
+                                .background(Color.white)
+                                .foregroundColor(.black)
+                                .cornerRadius(10)
+                        }
+                        .padding()
+                        
+                        Button(action: {
+                            if isMusicPlaying {
+                                self.stopSound()
+                            } else {
+                                self.playSound()
+                            }
+                        }) {
+                            Image(systemName: isMusicPlaying ? "pause.fill" : "play.fill")
+                                .frame(maxWidth: .infinity)
+                                .padding()
+                                .background(Color.red)
+                                .foregroundColor(.white)
+                                .cornerRadius(10)
+                        }
+                        .padding()
+                        
+                        Button(action: {
+                            playNextSound()
+                        }) {
+                            Image(systemName: "forward.fill")
+                                .frame(maxWidth: .infinity)
+                                .padding()
+                                .background(Color.white)
+                                .foregroundColor(.black)
+                                .cornerRadius(10)
+                        }
+                        .padding()
                     }
-                    .padding()
+                    
+                    MusicProgressBar(currentTime: $currentTime, totalTime: $totalTime)
+                        .padding()
+                    
+                    Spacer()
                 }
-
-                MusicProgressBar(currentTime: $currentTime, totalTime: $totalTime)
-                    .padding()
-
-                Spacer()
-            }
-            .navigationTitle("Study Corner \(username)")
         }
         .onChange(of: selectedMode) { newMode, _ in
             stopSound()
@@ -158,8 +160,6 @@ struct Page1: View {
     private func stopSound() {
         player?.stop()
         isMusicPlaying = false
-        currentTime = 0
-        totalTime = 0
     }
 
     private func playNextSound() {

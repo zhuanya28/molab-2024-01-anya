@@ -8,7 +8,7 @@ struct Router: App {
     @StateObject var pageModel = PageModel();
     var body: some Scene {
         WindowGroup {
-            ContentView(username: "stranger")
+            ContentView()
                 .environmentObject(pageModel)
         }
     }
@@ -16,11 +16,13 @@ struct Router: App {
 
 class PageModel: ObservableObject {
     @Published var pageTag: PageEnum = .LogIn
+    @Published var username: String = "stranger"
 }
 
 enum PageEnum {
+    case LogIn
     case Page1
     case Page2
-    case LogIn
+    case Page3
 }
 

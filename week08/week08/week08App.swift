@@ -11,7 +11,8 @@ import SwiftUI
 struct week08App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(username: "stranger")
+            ContentView()
+                .environmentObject(PageModel())
         }
     }
 }

@@ -34,13 +34,15 @@ class QuoteViewModel: ObservableObject {
 }
 
 struct Page2: View {
-    var username: String
+    @EnvironmentObject var pageModel: PageModel
     @StateObject private var quoteViewModel = QuoteViewModel()
     @State private var selectedCategory: String = "study"
     @State private var currentQuote: String = ""
 
     var body: some View {
+        
         VStack {
+            Text("Welcome, \(pageModel.username)")
             Picker("Select Category", selection: $selectedCategory) {
                 Text("Study").tag("study")
                 Text("Life").tag("life")
@@ -73,7 +75,6 @@ struct Page2: View {
             quoteViewModel.loadQuotes()
             regenerateQuote()
         }
-        .navigationTitle("Page 2")
     }
 
     private func regenerateQuote() {

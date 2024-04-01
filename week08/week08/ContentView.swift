@@ -1,57 +1,77 @@
-//
-//  ContentView.swift
-//  week06
-//
-//  Created by anya zhukova on 3/8/24.
-//
-
 import SwiftUI
 
 struct ContentView: View {
-    var username: String
-    @EnvironmentObject var pageModel: PageModel;
+    @EnvironmentObject var pageModel: PageModel
+    
     var body: some View {
         VStack {
             switch pageModel.pageTag {
-            case .Page1:
-                Page1(username: username)
-            case .Page2:
-                Page2(username: username)
             case .LogIn:
                 LogInPage()
+            case .Page1:
+                Page1()
+            case .Page2:
+                Page2()
+            case .Page3:
+                Page3()
+       
             }
-           
-            Spacer()
             
-    
-            VStack {
+            HStack {
+                Spacer()
                 Button(action: {
                     pageModel.pageTag = .LogIn
                 }) {
-                    Text("Profile")
+                    Image(systemName: pageModel.pageTag == .LogIn ? "person.fill" : "person")
                         .foregroundColor(.purple)
-                    
+                        .font(.title)
+                        .padding()
                 }
+                
+                Spacer()
+                
                 Button(action: {
                     pageModel.pageTag = .Page1
                 }) {
-                    Text("Focus")
+                    Image(systemName: pageModel.pageTag == .Page1 ? "book.fill" : "book")
                         .foregroundColor(.purple)
-                    
+                        .font(.title)
+                        .padding()
                 }
+                
+                Spacer()
+                
+                
+                Button(action: {
+                    pageModel.pageTag = .Page3
+                }) {
+                    Image(systemName: pageModel.pageTag == .Page3 ? "building.columns.fill" : "building.columns")
+                        .foregroundColor(.purple)
+                        .font(.title)
+                        .padding()
+                }
+                
+                Spacer()
                 
                 Button(action: {
                     pageModel.pageTag = .Page2
                 }) {
-                    Text("Encouragement")
+                    Image(systemName: pageModel.pageTag == .Page2 ? "heart.fill" : "heart")
                         .foregroundColor(.purple)
+                        .font(.title)
+                        .padding()
                 }
+                
+                Spacer()
             }
+            .padding(.bottom, 5)
         }
     }
 }
 
-#Preview {
-    ContentView(username: "stranger")
-        .environmentObject(PageModel())
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+            .environmentObject(PageModel())
+    }
 }

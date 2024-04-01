@@ -1,42 +1,34 @@
-// LogInPage.swift
-
-
 import SwiftUI
 
 struct LogInPage: View {
-
-    @AppStorage("username") var username: String = "stranger"
+    @EnvironmentObject var pageModel: PageModel
     @State private var inputUsername: String = ""
 
     var body: some View {
-        NavigationView {
-            VStack {
-                Spacer()
-                Text("Welcome, \(username)")
+        VStack {
+            Spacer()
+            Text("Welcome, \(pageModel.username)")
 
-                TextField("Enter your username", text: $inputUsername)
-                    .padding()
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+            TextField("Enter your username", text: $inputUsername)
+                .padding()
+                .textFieldStyle(RoundedBorderTextFieldStyle())
 
-                HStack {
-                    Button(action: {
-                    }) {
-                        Text("Set name")
+            HStack {
+                Button(action: {
+                    if !inputUsername.isEmpty {
+                        pageModel.username = inputUsername
+                        pageModel.pageTag = .Page1
                     }
-                    .buttonStyle(BorderlessButtonStyle())
-                    .foregroundColor(.blue)
-                    .onTapGesture {
-                        if !inputUsername.isEmpty {
-                            username = inputUsername
-                        }
-                    }
+                }) {
+                    Text("Set name")
                 }
-
-                Spacer()
+                .buttonStyle(BorderlessButtonStyle())
+                .foregroundColor(.blue)
             }
-            .padding()
-            .navigationTitle("Login Page")
+
+            Spacer()
         }
+        .padding()
     }
 }
 

@@ -14,6 +14,8 @@ struct ContentView: View {
                 Page2()
             case .Page3:
                 Page3()
+            case .RemindersPage:
+                RemindersPage()
        
             }
             
@@ -57,6 +59,16 @@ struct ContentView: View {
                     pageModel.pageTag = .Page2
                 }) {
                     Image(systemName: pageModel.pageTag == .Page2 ? "heart.fill" : "heart")
+                        .foregroundColor(.purple)
+                        .font(.title)
+                        .padding()
+                }
+                
+                Spacer()
+                Button(action: {
+                    pageModel.pageTag = .RemindersPage
+                }) {
+                    Image(systemName: pageModel.pageTag == .RemindersPage ? "list.clipboard.fill" : "list.clipboard")
                         .foregroundColor(.purple)
                         .font(.title)
                         .padding()

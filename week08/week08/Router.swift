@@ -24,5 +24,6 @@ enum PageEnum {
     case Page1
     case Page2
     case Page3
+    case RemindersPage
 }
 

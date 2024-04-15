@@ -17,3 +17,12 @@ Additionally, there are some of the features that I want to add that were less c
 My goal for the next weeks is to dive into designing a user-friendly and aesthetically pleasing app. I want to have nice menus, buttons, widgets, etc. 
 
 If there is time left, I would like to also figure out a way to create a widget for the app? For the home screen? But I am still uncertain about that one. If I could do that without publishing the app, I will be working on that too. 
+
+
+## some resources 
+- Unsplash API: _https://github.com/unsplash/unsplash-photopicker-ios_
+- Apple Music API: _https://developer.apple.com/documentation/applemusicapi/_
+- Pomodoro timers inspiration:
+    - https://kavsoft.dev/swiftui_3.0_pomodoro_timer_may
+    - _https://github.com/geraldbryan/PomodoroApp_
+    

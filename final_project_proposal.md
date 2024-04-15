@@ -13,6 +13,7 @@ Additionally, there are some of the features that I want to add that were less c
 - potentially connecting with the Apple Music API (MusicKit) to work out a way to choose from the playlists for studying that apple music has 
 - integrating Unsplash (or similar) API for the photo selection
 - i want to keep the "inspirational corner" & maybe integrate it with the main view, where for each study session a new one is getting displayed instead of it being on a separate page
+- potentially having people collaborate on something, maybe creating a forum or having them like certain pictures or having them being able to add pictures to the shared album ("community album")
 
 My goal for the next weeks is to dive into designing a user-friendly and aesthetically pleasing app. I want to have nice menus, buttons, widgets, etc. 
 
@@ -25,4 +26,4 @@ If there is time left, I would like to also figure out a way to create a widget 
 - Pomodoro timers inspiration:
     - https://kavsoft.dev/swiftui_3.0_pomodoro_timer_may
     - _https://github.com/geraldbryan/PomodoroApp_
-    
+

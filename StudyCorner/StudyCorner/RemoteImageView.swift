@@ -4,7 +4,8 @@
 //
 //  Created by anya zhukova on 4/15/24.
 //
-
+// heavily relying on this youtube video : https://www.youtube.com/watch?v=CmOe9vNopjU
+//
 // THIS ONE IS LOADING + DISPLAYING THE IMAGE FROM UNSPLASH
 
 import SwiftUI

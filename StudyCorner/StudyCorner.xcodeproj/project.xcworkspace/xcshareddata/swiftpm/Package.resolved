@@ -1,0 +1,15 @@
+{
+  "originHash" : "c3323379c2227c450c7ad14e49265ac5f27fbd9f8dec7bf6b9ccfe15a2debe48",
+  "pins" : [
+    {
+      "identity" : "unsplash-photopicker-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/unsplash/unsplash-photopicker-ios.git",
+      "state" : {
+        "revision" : "7306a92362855ec41149e5e214c63089586653f4",
+        "version" : "1.3.0"
+      }
+    }
+  ],
+  "version" : 3
+}

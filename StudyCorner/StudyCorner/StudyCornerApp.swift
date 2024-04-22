@@ -11,7 +11,7 @@ import SwiftUI
 struct StudyCornerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LaunchScreenView()
         }
     }
 }

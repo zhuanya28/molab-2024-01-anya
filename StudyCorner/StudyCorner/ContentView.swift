@@ -54,7 +54,6 @@ struct ContentView: View {
                      .zIndex(2)
                      .padding()
           
-                
         
             }
 
@@ -79,8 +78,6 @@ struct ContentView: View {
         randomIndex = newIndex
     }
 }
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
+#Preview{
         ContentView()
-    }
 }

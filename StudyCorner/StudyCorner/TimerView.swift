@@ -6,111 +6,110 @@
 //
 
 // Reference: https://github.com/pouyasadri/Timer-app-ios/tree/main
+// and https://github.com/molab-itp/05-TimerDemo
 
 
 import SwiftUI
 
+
 struct TimerView: View {
 
-    @ObservedObject var timerViewModel : TimerViewModel
-    @State var isPaused = false
-    @State private var rotation = 0
+    @AppStorage("timeRemaining") var timeRemaining = 60
+    @State private var timerIsRunning = false
+    @State private var selectedDurationIndex = 0
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    private let durations = [30, 60, 90, 120]
     
-
-    init(seconds: TimeInterval = 0 ){
-        timerViewModel = TimerViewModel(seconds: seconds, goalTime: 20)
-    }
-
     var body: some View {
-        ZStack{
-            ProgressBarView(progress: $timerViewModel.seconds, goal: $timerViewModel.goalTime)
-            centerTitle
-            bottomButtons
-                .onAppear{
-                    timerViewModel.startSession()
-                    timerViewModel.viewDidLoad()
+        VStack {
+            TimeDisplay(timeRemaining: $timeRemaining)
+            
+            HStack {
+                Button(action: {
+                    self.timerIsRunning.toggle()
+                }) {
+                    HStack(spacing: 15) {
+                        Image(systemName: timerIsRunning ? "pause.fill" : "play.fill")
+                        Text(timerIsRunning ? "Pause" : "Start")
+                    }
+                    .font(.system(size: 20))
+                    .frame(width: 130, height: 50)
+                    .background(Color.black)
+                    .foregroundColor(Color.white)
+                    .cornerRadius(10)
                 }
-        }
-    }
-    
-
-    private var centerTitle: some View{
-        VStack{
-            Text(timerViewModel.progress >= 1 ? "Done" : timerViewModel.displayTime)
-                .font(.system(size: 50,weight: .bold))
-                .foregroundStyle(.white)
-            Text("\(timerViewModel.goalTime.asString(style: .short))")
-                .foregroundStyle(.white.opacity(0.6))
-        }
-    }
-    private var bottomButtons: some View{
-        VStack{
-            Text("Timer App")
-                .font(.title)
-                .foregroundStyle(Color(red: 180/255, green: 187/255, blue: 62/255))
-            Spacer()
-            buttonView
-        }
-    }
-    private var buttonView: some View{
-        HStack{
-            resetButton
-            startPauseButton
-        }
-        .padding(.bottom,40)
-        .padding(.horizontal,20)
-    }
-    private var resetButton: some View{
-        Button{
-            reset()
-        } label: {
-            HStack(spacing:8){
-                Image(systemName: "arrow.clockwise")
-                    .rotationEffect(.degrees(Double(rotation)))
-                Text("Reset")
+                
+                Button(action: {
+                    self.timerIsRunning = false
+                    self.timeRemaining = durations[selectedDurationIndex]
+                }) {
+                    HStack(spacing: 15) {
+                        Image(systemName: "arrow.clockwise")
+                        Text("Reset")
+                    }
+                    .font(.system(size: 20))
+                    .frame(width: 130, height: 50)
+                    .background(Color.black)
+                    .foregroundColor(Color.white)
+                    .cornerRadius(10)
+                }
             }
-            .padding()
-            .tint(.black)
-            .frame(maxWidth: .infinity)
-            .font(.system(size: 18,weight: .bold))
         }
-        .background(Color(red: 236/255, green: 230/255, blue: 0/255))
-        .cornerRadius(15)
-    }
-    private var startPauseButton: some View{
-        Button{
-            if timerViewModel.progress < 1 {
-                isPaused.toggle()
-                isPaused ? timerViewModel.pauseSession() : timerViewModel.startSession()
+        .onReceive(timer) { _ in
+            if self.timeRemaining > 0 && self.timerIsRunning {
+                self.timeRemaining -= 1
+                print("Time Remaining:", self.timeRemaining)
             }
-        } label: {
-            HStack(spacing:8){
-                Image(systemName: isPaused ? "play.fill" : "pause.fill")
-                Text(isPaused ? "Start" : "Pause")
-            }
-            .padding()
-            .tint(.black)
-            .frame(maxWidth: .infinity)
-            .font(.system(size: 18,weight: .bold))
         }
-        .background(Color(red: 236/255, green: 230/255, blue: 0/255))
-        .cornerRadius(15)
-    }
-    
-    private func reset(){
-        withAnimation(.easeInOut(duration:0.4)){
-            rotation += 360
-        }
-        if timerViewModel.progress >= 1{
-            timerViewModel.reset()
-            timerViewModel.startSession()
-        }
-        else{
-            timerViewModel.reset()
-            timerViewModel.displayTime = "00:00"
-        }
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+        .edgesIgnoringSafeArea(.all)
+ 
     }
 }
+
+struct TimeDisplay: View {
+    @Binding var timeRemaining: Int
+    @State private var isSelectorPresented = false
+    @State private var isMenuVisible = false
+    @State private var selectedDurationIndex = 0 // Added state variable for selected duration
+        private let durations = [5, 10, 15, 25, 45, 60] // Define durations here
+        
+    var body: some View {
+           VStack {
+              
+               if self.selectedDurationIndex >= 0 && self.selectedDurationIndex < durations.count {
+                   Picker(selection: $selectedDurationIndex, label: Text("")) {
+                       ForEach(0..<durations.count, id: \.self) { index in
+                           Text("\(durations[index]) seconds")
+                               .foregroundColor(.black)
+                       }
+                   }
+                   .pickerStyle(MenuPickerStyle())
+                   
+                   .onChange(of: selectedDurationIndex) { _ in
+                       timeRemaining = durations[selectedDurationIndex] // Update timeRemaining when selection changes
+                   }
+                   Text(timeString)
+                       .font(.system(size: 120))
+                       .foregroundColor(.white)
+                       .onTapGesture {
+                           self.selectedDurationIndex = durations.firstIndex(of: timeRemaining) ?? 0
+                       }
+                   
+               }
+           }
+       }
+      
+      private var timeString: String {
+          let minutes = timeRemaining / 60
+          let seconds = timeRemaining % 60
+          return String(format: "%02d:%02d", minutes, seconds)
+      }
+}
+
+
+
+
 
 #Preview {
     TimerView()

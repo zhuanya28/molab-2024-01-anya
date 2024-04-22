@@ -16,9 +16,6 @@
 		A7BF2A322BCDCE60008392C7 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BF2A312BCDCE60008392C7 /* Result.swift */; };
 		A7BF2A342BCDF992008392C7 /* RemoteImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BF2A332BCDF992008392C7 /* RemoteImageView.swift */; };
 		A7BF2A362BCE225B008392C7 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BF2A352BCE225B008392C7 /* TimerView.swift */; };
-		A7BF2A382BCE250F008392C7 /* ExtensionDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BF2A372BCE250E008392C7 /* ExtensionDouble.swift */; };
-		A7BF2A3A2BCE254E008392C7 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BF2A392BCE254D008392C7 /* ProgressBarView.swift */; };
-		A7BF2A3C2BCE257F008392C7 /* TimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BF2A3B2BCE257F008392C7 /* TimeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,9 +28,6 @@
 		A7BF2A312BCDCE60008392C7 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		A7BF2A332BCDF992008392C7 /* RemoteImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageView.swift; sourceTree = "<group>"; };
 		A7BF2A352BCE225B008392C7 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
-		A7BF2A372BCE250E008392C7 /* ExtensionDouble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDouble.swift; sourceTree = "<group>"; };
-		A7BF2A392BCE254D008392C7 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
-		A7BF2A3B2BCE257F008392C7 /* TimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,9 +65,6 @@
 				A7BF2A202BCDC731008392C7 /* ContentView.swift */,
 				A7BF2A332BCDF992008392C7 /* RemoteImageView.swift */,
 				A7BF2A352BCE225B008392C7 /* TimerView.swift */,
-				A7BF2A372BCE250E008392C7 /* ExtensionDouble.swift */,
-				A7BF2A392BCE254D008392C7 /* ProgressBarView.swift */,
-				A7BF2A3B2BCE257F008392C7 /* TimeViewModel.swift */,
 				A7BF2A312BCDCE60008392C7 /* Result.swift */,
 				A7BF2A2F2BCDCE13008392C7 /* SearchObjectController.swift */,
 				A7BF2A222BCDC733008392C7 /* Assets.xcassets */,
@@ -168,12 +159,9 @@
 			files = (
 				A7BF2A362BCE225B008392C7 /* TimerView.swift in Sources */,
 				A7BF2A212BCDC731008392C7 /* ContentView.swift in Sources */,
-				A7BF2A382BCE250F008392C7 /* ExtensionDouble.swift in Sources */,
 				A7BF2A302BCDCE13008392C7 /* SearchObjectController.swift in Sources */,
 				A7BF2A322BCDCE60008392C7 /* Result.swift in Sources */,
-				A7BF2A3A2BCE254E008392C7 /* ProgressBarView.swift in Sources */,
 				A7BF2A342BCDF992008392C7 /* RemoteImageView.swift in Sources */,
-				A7BF2A3C2BCE257F008392C7 /* TimeViewModel.swift in Sources */,
 				A7BF2A1F2BCDC731008392C7 /* StudyCornerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

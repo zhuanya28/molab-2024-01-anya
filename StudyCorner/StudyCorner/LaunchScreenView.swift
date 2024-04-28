@@ -1,4 +1,3 @@
-//
 //  LaunchScreenView.swift
 //  StudyCorner
 //
@@ -7,75 +6,89 @@
 
 import SwiftUI
 
-struct Quote: Codable {
-    let id: String
-    let text: String
-}
-
-class QuoteViewModel: ObservableObject {
-    @Published var quotes: [Quote] = []
-
-    init() {
-        loadQuotes()
-    }
-
-    func loadQuotes() {
-        if let path = Bundle.main.path(forResource: "quotes", ofType: "json") {
-            do {
-                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                let decoder = JSONDecoder()
-                let quotesData = try decoder.decode([String: [Quote]].self, from: data)
-
-                if let quotesArray = quotesData["quotes"] {
-                    quotes = quotesArray
-                } else {
-                    print("Error: Could not find 'quotes' key in the JSON.")
-                }
-            } catch {
-                print("Error loading JSON: \(error)")
-            }
-        }
-    }
-}
 
 struct LaunchScreenView: View {
     @StateObject private var quoteViewModel = QuoteViewModel()
     @State private var currentQuote: String = ""
+    @State private var currentAuthor: String = ""
+    @State private var isShowingMainView = false
     
     var body: some View {
-        VStack {
-            Text("Study Corner")
-                .font(.largeTitle)
-                .fontWeight(.bold)
-                .padding(.bottom, 20)
-   
-            Text(currentQuote)
-                .font(.title)
-                .multilineTextAlignment(.center)
-                .padding()
-            Button("Continue") {
-          
+        NavigationView {
+            VStack {
+                Text("Welcome to the")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .multilineTextAlignment(.center)
+                Text("Study Corner")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .padding(.bottom, 20)
+                    .multilineTextAlignment(.center)
+                    
+                
+                Divider()
+                    .frame(width: 70)
+                    .background(Color.black)
+                
+                VStack {
+                        Text(currentQuote)
+                        .font(.system(size: 20))
+                        .multilineTextAlignment(.center)
+                        .padding()
+                        .padding(.bottom, 0)
+                                   
+                        Text("- \(currentAuthor)")
+                        .fontWeight(.semibold)
+                        .italic()
+                        .padding(.top, 0
+                                )
+                        .padding(.bottom,10)
+                               }
+                Divider()
+                    .frame(width: 40)
+                    .background(Color.black)
+                
+                HStack{
+                    NavigationLink(
+                        destination: ContentView(),
+                        label: {
+                                    Label("Timer", systemImage: "clock")
+                                        .padding()
+                                        .foregroundColor(.white)
+                                        .background(Color.black)
+                                        .cornerRadius(8)
+                                }
+                    )
+                    NavigationLink(
+                        destination: RemindersMainView(),
+                        label: {
+                            Label("To-do list",  systemImage: "list.bullet")
+                                .padding()
+                                .foregroundColor(.white)
+                                .background(Color.black)
+                                .cornerRadius(8)
+                        }
+                    )
+                }
+                .padding(.top, 20
+                        )
             }
             .padding()
-            .foregroundColor(.white)
-            .background(Color.blue)
-            .cornerRadius(8)
+            .onAppear {
+                regenerateQuote()
+            }
         }
-        .padding()
-
-        .onAppear {
-            regenerateQuote()
-        }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     private func regenerateQuote() {
         if let randomQuote = quoteViewModel.quotes.randomElement() {
             currentQuote = randomQuote.text
+            currentAuthor = randomQuote.author
         }
     }
 }
-
-
 
 #Preview {
     LaunchScreenView()

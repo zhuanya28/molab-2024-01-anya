@@ -10,6 +10,8 @@
 		A734F9422BD6FB6B008BFF29 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A734F9412BD6FB6B008BFF29 /* Launch Screen.storyboard */; };
 		A734F9442BD6FC40008BFF29 /* quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = A734F9432BD6FC40008BFF29 /* quotes.json */; };
 		A734F9462BD6FE1A008BFF29 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A734F9452BD6FE1A008BFF29 /* LaunchScreenView.swift */; };
+		A762DD2A2BDEE646005ABAE9 /* QuoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A762DD292BDEE646005ABAE9 /* QuoteModel.swift */; };
+		A762DD2C2BDEE71E005ABAE9 /* RemindersMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A762DD2B2BDEE71E005ABAE9 /* RemindersMainView.swift */; };
 		A7BF2A1F2BCDC731008392C7 /* StudyCornerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BF2A1E2BCDC731008392C7 /* StudyCornerApp.swift */; };
 		A7BF2A212BCDC731008392C7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BF2A202BCDC731008392C7 /* ContentView.swift */; };
 		A7BF2A232BCDC733008392C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7BF2A222BCDC733008392C7 /* Assets.xcassets */; };
@@ -25,6 +27,8 @@
 		A734F9412BD6FB6B008BFF29 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		A734F9432BD6FC40008BFF29 /* quotes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = quotes.json; sourceTree = "<group>"; };
 		A734F9452BD6FE1A008BFF29 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
+		A762DD292BDEE646005ABAE9 /* QuoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteModel.swift; sourceTree = "<group>"; };
+		A762DD2B2BDEE71E005ABAE9 /* RemindersMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersMainView.swift; sourceTree = "<group>"; };
 		A7BF2A1B2BCDC731008392C7 /* StudyCorner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyCorner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7BF2A1E2BCDC731008392C7 /* StudyCornerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyCornerApp.swift; sourceTree = "<group>"; };
 		A7BF2A202BCDC731008392C7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -68,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				A734F9432BD6FC40008BFF29 /* quotes.json */,
+				A762DD292BDEE646005ABAE9 /* QuoteModel.swift */,
 				A734F9452BD6FE1A008BFF29 /* LaunchScreenView.swift */,
 				A7BF2A1E2BCDC731008392C7 /* StudyCornerApp.swift */,
 				A7BF2A202BCDC731008392C7 /* ContentView.swift */,
@@ -78,6 +83,7 @@
 				A7BF2A222BCDC733008392C7 /* Assets.xcassets */,
 				A7BF2A242BCDC733008392C7 /* Preview Content */,
 				A734F9412BD6FB6B008BFF29 /* Launch Screen.storyboard */,
+				A762DD2B2BDEE71E005ABAE9 /* RemindersMainView.swift */,
 			);
 			path = StudyCorner;
 			sourceTree = "<group>";
@@ -169,7 +175,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7BF2A362BCE225B008392C7 /* TimerView.swift in Sources */,
+				A762DD2C2BDEE71E005ABAE9 /* RemindersMainView.swift in Sources */,
 				A7BF2A212BCDC731008392C7 /* ContentView.swift in Sources */,
+				A762DD2A2BDEE646005ABAE9 /* QuoteModel.swift in Sources */,
 				A734F9462BD6FE1A008BFF29 /* LaunchScreenView.swift in Sources */,
 				A7BF2A302BCDCE13008392C7 /* SearchObjectController.swift in Sources */,
 				A7BF2A322BCDCE60008392C7 /* Result.swift in Sources */,

@@ -9,9 +9,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    
     @ObservedObject var searchObjectController = SearchObjectController.shared
     @State private var randomIndex: Int = 1
+    @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
         ZStack {
@@ -29,41 +29,36 @@ struct ContentView: View {
             }
             
             VStack {
+                Spacer()
                 
                 Spacer()
-                Spacer()
-               
-                    
-                    Spacer() 
-                    
-                    TimerView()
-                        .zIndex(2)
-                    
                 
-                     Button(action: {
-                         shuffleImages()
-                     }) {
-                         Image(systemName: "shuffle")
-                             .font(.title)
-                             .padding()
-                             .background(Color.white)
-                             .foregroundColor(.black)
-                             .clipShape(Circle())
-                             .shadow(radius: 5)
-                     }
-                     .zIndex(2)
-                     .padding()
-          
-        
+                Spacer()
+                
+                TimerView()
+                    .zIndex(2)
+                
+                Button(action: {
+                    shuffleImages()
+                }) {
+                    Image(systemName: "shuffle")
+                        .font(.title)
+                        .padding()
+                        .background(Color.white)
+                        .foregroundColor(.black)
+                        .clipShape(Circle())
+                        .shadow(radius: 5)
+                }
+                .zIndex(2)
+                .padding()
             }
-
-            
-          
         }
         .onAppear {
             searchObjectController.search()
             randomIndex = searchObjectController.results.indices.randomElement() ?? 0
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: CustomBackButton())
     }
     
     private func shuffleImages() {
@@ -78,6 +73,21 @@ struct ContentView: View {
         randomIndex = newIndex
     }
 }
+
+struct CustomBackButton: View {
+    @Environment(\.presentationMode) var presentationMode
+
+    var body: some View {
+        Button(action: {
+            presentationMode.wrappedValue.dismiss()
+        }) {
+            Image(systemName: "arrow.backward")
+                .foregroundColor(.white)
+                .padding(.horizontal)
+        }
+    }
+}
+
 #Preview{
         ContentView()
 }

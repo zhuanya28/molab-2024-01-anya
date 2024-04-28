@@ -84,7 +84,7 @@ struct TimeDisplay: View {
             .pickerStyle(MenuPickerStyle())
             .accentColor(.white)
             
-            .onChange(of: selectedDurationIndex) { newIndex in
+            .onChange(of: selectedDurationIndex) { oldIndex, newIndex in
                 timeRemaining = durations[newIndex]
             }
             

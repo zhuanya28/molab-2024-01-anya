@@ -20,16 +20,20 @@ struct LaunchScreenView: View {
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
+                    .foregroundColor(.gray)
+                 
                 Text("Study Corner")
                     .font(.largeTitle)
                     .fontWeight(.bold)
-                    .padding(.bottom, 20)
+                    .padding(.bottom, 30)
                     .multilineTextAlignment(.center)
+                    .foregroundColor(.black)
                     
                 
                 Divider()
                     .frame(width: 70)
                     .background(Color.black)
+                    .padding(.bottom, 0)
                 
                 VStack {
                         Text(currentQuote)

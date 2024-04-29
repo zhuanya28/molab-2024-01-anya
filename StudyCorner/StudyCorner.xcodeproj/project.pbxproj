@@ -13,6 +13,8 @@
 		A762DD2A2BDEE646005ABAE9 /* QuoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A762DD292BDEE646005ABAE9 /* QuoteModel.swift */; };
 		A762DD2C2BDEE71E005ABAE9 /* RemindersMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A762DD2B2BDEE71E005ABAE9 /* RemindersMainView.swift */; };
 		A762DD2E2BDEED4B005ABAE9 /* CustomBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A762DD2D2BDEED4B005ABAE9 /* CustomBackButton.swift */; };
+		A762DD302BDF41EB005ABAE9 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A762DD2F2BDF41EB005ABAE9 /* Reminder.swift */; };
+		A762DD322BDF420C005ABAE9 /* AddReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A762DD312BDF420C005ABAE9 /* AddReminderView.swift */; };
 		A7BF2A1F2BCDC731008392C7 /* StudyCornerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BF2A1E2BCDC731008392C7 /* StudyCornerApp.swift */; };
 		A7BF2A212BCDC731008392C7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BF2A202BCDC731008392C7 /* ContentView.swift */; };
 		A7BF2A232BCDC733008392C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7BF2A222BCDC733008392C7 /* Assets.xcassets */; };
@@ -31,6 +33,8 @@
 		A762DD292BDEE646005ABAE9 /* QuoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteModel.swift; sourceTree = "<group>"; };
 		A762DD2B2BDEE71E005ABAE9 /* RemindersMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersMainView.swift; sourceTree = "<group>"; };
 		A762DD2D2BDEED4B005ABAE9 /* CustomBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButton.swift; sourceTree = "<group>"; };
+		A762DD2F2BDF41EB005ABAE9 /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
+		A762DD312BDF420C005ABAE9 /* AddReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReminderView.swift; sourceTree = "<group>"; };
 		A7BF2A1B2BCDC731008392C7 /* StudyCorner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyCorner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7BF2A1E2BCDC731008392C7 /* StudyCornerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyCornerApp.swift; sourceTree = "<group>"; };
 		A7BF2A202BCDC731008392C7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -84,6 +88,8 @@
 				A7BF2A312BCDCE60008392C7 /* Result.swift */,
 				A7BF2A2F2BCDCE13008392C7 /* SearchObjectController.swift */,
 				A762DD2D2BDEED4B005ABAE9 /* CustomBackButton.swift */,
+				A762DD2F2BDF41EB005ABAE9 /* Reminder.swift */,
+				A762DD312BDF420C005ABAE9 /* AddReminderView.swift */,
 				A7BF2A222BCDC733008392C7 /* Assets.xcassets */,
 				A7BF2A242BCDC733008392C7 /* Preview Content */,
 				A734F9412BD6FB6B008BFF29 /* Launch Screen.storyboard */,
@@ -179,6 +185,8 @@
 			files = (
 				A7BF2A362BCE225B008392C7 /* TimerView.swift in Sources */,
 				A762DD2E2BDEED4B005ABAE9 /* CustomBackButton.swift in Sources */,
+				A762DD322BDF420C005ABAE9 /* AddReminderView.swift in Sources */,
+				A762DD302BDF41EB005ABAE9 /* Reminder.swift in Sources */,
 				A762DD2C2BDEE71E005ABAE9 /* RemindersMainView.swift in Sources */,
 				A7BF2A212BCDC731008392C7 /* ContentView.swift in Sources */,
 				A762DD2A2BDEE646005ABAE9 /* QuoteModel.swift in Sources */,

@@ -1,4 +1,3 @@
-
 //
 // Reminder.swift
 // MakeItSo
@@ -30,4 +29,3 @@ extension Reminder {
     Reminder(title: "do ", isCompleted: true),
   ]
 }
-

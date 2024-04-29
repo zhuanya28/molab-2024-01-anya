@@ -74,9 +74,22 @@ struct LaunchScreenView: View {
                                 .cornerRadius(8)
                         }
                     )
+                    
+                    NavigationLink(
+                        destination: PlayerMainView(),
+                        label: {
+                            Label("Player",  systemImage: "music.note")
+                                .padding()
+                                .foregroundColor(.white)
+                                .background(Color.black)
+                                .cornerRadius(8)
+                        }
+                    )
                 }
                 .padding(.top, 20
                         )
+                
+            
             }
             .padding()
             .onAppear {

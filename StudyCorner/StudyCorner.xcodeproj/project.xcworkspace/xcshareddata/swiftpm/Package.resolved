@@ -1,6 +1,15 @@
 {
-  "originHash" : "c3323379c2227c450c7ad14e49265ac5f27fbd9f8dec7bf6b9ccfe15a2debe48",
+  "originHash" : "68f165d8a13aea8a0f9d01e4c5222ba0a5704d1c1621ff051ab6e8d37d7e0468",
   "pins" : [
+    {
+      "identity" : "ios-sdk",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/spotify/ios-sdk",
+      "state" : {
+        "branch" : "master",
+        "revision" : "abb7052d6c6969c79d52ba7fe8b9ddb5f2613f79"
+      }
+    },
     {
       "identity" : "unsplash-photopicker-ios",
       "kind" : "remoteSourceControl",

@@ -15,6 +15,8 @@
 		A762DD2E2BDEED4B005ABAE9 /* CustomBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A762DD2D2BDEED4B005ABAE9 /* CustomBackButton.swift */; };
 		A762DD302BDF41EB005ABAE9 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A762DD2F2BDF41EB005ABAE9 /* Reminder.swift */; };
 		A762DD322BDF420C005ABAE9 /* AddReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A762DD312BDF420C005ABAE9 /* AddReminderView.swift */; };
+		A762DD342BDF4DFE005ABAE9 /* PlayerMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A762DD332BDF4DFE005ABAE9 /* PlayerMainView.swift */; };
+		A762DD372BDF4F63005ABAE9 /* SpotifyiOS in Frameworks */ = {isa = PBXBuildFile; productRef = A762DD362BDF4F63005ABAE9 /* SpotifyiOS */; };
 		A7BF2A1F2BCDC731008392C7 /* StudyCornerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BF2A1E2BCDC731008392C7 /* StudyCornerApp.swift */; };
 		A7BF2A212BCDC731008392C7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BF2A202BCDC731008392C7 /* ContentView.swift */; };
 		A7BF2A232BCDC733008392C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7BF2A222BCDC733008392C7 /* Assets.xcassets */; };
@@ -35,6 +37,7 @@
 		A762DD2D2BDEED4B005ABAE9 /* CustomBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButton.swift; sourceTree = "<group>"; };
 		A762DD2F2BDF41EB005ABAE9 /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		A762DD312BDF420C005ABAE9 /* AddReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReminderView.swift; sourceTree = "<group>"; };
+		A762DD332BDF4DFE005ABAE9 /* PlayerMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMainView.swift; sourceTree = "<group>"; };
 		A7BF2A1B2BCDC731008392C7 /* StudyCorner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyCorner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7BF2A1E2BCDC731008392C7 /* StudyCornerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyCornerApp.swift; sourceTree = "<group>"; };
 		A7BF2A202BCDC731008392C7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,6 +55,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7BF2A2E2BCDC75B008392C7 /* UnsplashPhotoPicker in Frameworks */,
+				A762DD372BDF4F63005ABAE9 /* SpotifyiOS in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +94,7 @@
 				A762DD2D2BDEED4B005ABAE9 /* CustomBackButton.swift */,
 				A762DD2F2BDF41EB005ABAE9 /* Reminder.swift */,
 				A762DD312BDF420C005ABAE9 /* AddReminderView.swift */,
+				A762DD332BDF4DFE005ABAE9 /* PlayerMainView.swift */,
 				A7BF2A222BCDC733008392C7 /* Assets.xcassets */,
 				A7BF2A242BCDC733008392C7 /* Preview Content */,
 				A734F9412BD6FB6B008BFF29 /* Launch Screen.storyboard */,
@@ -123,6 +128,7 @@
 			name = StudyCorner;
 			packageProductDependencies = (
 				A7BF2A2D2BCDC75B008392C7 /* UnsplashPhotoPicker */,
+				A762DD362BDF4F63005ABAE9 /* SpotifyiOS */,
 			);
 			productName = StudyCorner;
 			productReference = A7BF2A1B2BCDC731008392C7 /* StudyCorner.app */;
@@ -154,6 +160,7 @@
 			mainGroup = A7BF2A122BCDC731008392C7;
 			packageReferences = (
 				A7BF2A2C2BCDC75B008392C7 /* XCRemoteSwiftPackageReference "unsplash-photopicker-ios" */,
+				A762DD352BDF4F63005ABAE9 /* XCRemoteSwiftPackageReference "ios-sdk" */,
 			);
 			productRefGroup = A7BF2A1C2BCDC731008392C7 /* Products */;
 			projectDirPath = "";
@@ -188,6 +195,7 @@
 				A762DD322BDF420C005ABAE9 /* AddReminderView.swift in Sources */,
 				A762DD302BDF41EB005ABAE9 /* Reminder.swift in Sources */,
 				A762DD2C2BDEE71E005ABAE9 /* RemindersMainView.swift in Sources */,
+				A762DD342BDF4DFE005ABAE9 /* PlayerMainView.swift in Sources */,
 				A7BF2A212BCDC731008392C7 /* ContentView.swift in Sources */,
 				A762DD2A2BDEE646005ABAE9 /* QuoteModel.swift in Sources */,
 				A734F9462BD6FE1A008BFF29 /* LaunchScreenView.swift in Sources */,
@@ -402,6 +410,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		A762DD352BDF4F63005ABAE9 /* XCRemoteSwiftPackageReference "ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/spotify/ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		A7BF2A2C2BCDC75B008392C7 /* XCRemoteSwiftPackageReference "unsplash-photopicker-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/unsplash/unsplash-photopicker-ios.git";
@@ -413,6 +429,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A762DD362BDF4F63005ABAE9 /* SpotifyiOS */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A762DD352BDF4F63005ABAE9 /* XCRemoteSwiftPackageReference "ios-sdk" */;
+			productName = SpotifyiOS;
+		};
 		A7BF2A2D2BCDC75B008392C7 /* UnsplashPhotoPicker */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A7BF2A2C2BCDC75B008392C7 /* XCRemoteSwiftPackageReference "unsplash-photopicker-ios" */;

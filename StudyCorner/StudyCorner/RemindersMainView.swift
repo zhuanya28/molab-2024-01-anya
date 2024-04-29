@@ -1,4 +1,3 @@
-
 // MakeItSo
 //
 // Created by Peter Friese on 01.03.23.
@@ -89,8 +88,6 @@ struct RemindersMainView: View {
 }
 
 
-
-
-#Preview {
+#Preview{
     RemindersMainView()
 }

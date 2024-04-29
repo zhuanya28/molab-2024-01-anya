@@ -5,14 +5,22 @@
 //  Created by anya zhukova on 4/28/24.
 //
 
+// https://medium.com/@killian.j.sonna/integrating-spotifys-api-with-swiftui-a-step-by-step-guide-f85e92985e31
+
+//
+
 import SwiftUI
+import SpotifyiOS
+import Combine
 
-struct PlayerMainView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+@MainActor
+final class SpotifyController: NSObject, ObservableObject {
+    let spotifyClientID = "YOUR_CLIENT_ID"
+    let spotifyRedirectURL = URL(string:"spotify-ios-quick-start://spotify-login-callback")!
+    
+    var accessToken: String? = nil
+    ...
 }
 
-#Preview {
-    PlayerMainView()
-}
+
+

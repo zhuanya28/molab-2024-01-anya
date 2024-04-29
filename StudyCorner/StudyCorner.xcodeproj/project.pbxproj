@@ -17,6 +17,7 @@
 		A762DD322BDF420C005ABAE9 /* AddReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A762DD312BDF420C005ABAE9 /* AddReminderView.swift */; };
 		A762DD342BDF4DFE005ABAE9 /* PlayerMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A762DD332BDF4DFE005ABAE9 /* PlayerMainView.swift */; };
 		A762DD372BDF4F63005ABAE9 /* SpotifyiOS in Frameworks */ = {isa = PBXBuildFile; productRef = A762DD362BDF4F63005ABAE9 /* SpotifyiOS */; };
+		A762DD3B2BDF51C2005ABAE9 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A762DD3A2BDF51C2005ABAE9 /* Info.plist */; };
 		A7BF2A1F2BCDC731008392C7 /* StudyCornerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BF2A1E2BCDC731008392C7 /* StudyCornerApp.swift */; };
 		A7BF2A212BCDC731008392C7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BF2A202BCDC731008392C7 /* ContentView.swift */; };
 		A7BF2A232BCDC733008392C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7BF2A222BCDC733008392C7 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 		A762DD2F2BDF41EB005ABAE9 /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		A762DD312BDF420C005ABAE9 /* AddReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReminderView.swift; sourceTree = "<group>"; };
 		A762DD332BDF4DFE005ABAE9 /* PlayerMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMainView.swift; sourceTree = "<group>"; };
+		A762DD3A2BDF51C2005ABAE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7BF2A1B2BCDC731008392C7 /* StudyCorner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyCorner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7BF2A1E2BCDC731008392C7 /* StudyCornerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyCornerApp.swift; sourceTree = "<group>"; };
 		A7BF2A202BCDC731008392C7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 		A7BF2A1D2BCDC731008392C7 /* StudyCorner */ = {
 			isa = PBXGroup;
 			children = (
+				A762DD3A2BDF51C2005ABAE9 /* Info.plist */,
 				A734F9432BD6FC40008BFF29 /* quotes.json */,
 				A762DD292BDEE646005ABAE9 /* QuoteModel.swift */,
 				A734F9452BD6FE1A008BFF29 /* LaunchScreenView.swift */,
@@ -179,6 +182,7 @@
 				A734F9442BD6FC40008BFF29 /* quotes.json in Resources */,
 				A734F9422BD6FB6B008BFF29 /* Launch Screen.storyboard in Resources */,
 				A7BF2A262BCDC733008392C7 /* Preview Assets.xcassets in Resources */,
+				A762DD3B2BDF51C2005ABAE9 /* Info.plist in Resources */,
 				A7BF2A232BCDC733008392C7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

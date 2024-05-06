@@ -81,7 +81,7 @@ final class SpotifyController: NSObject, ObservableObject {
                appRemote.connectionParameters.accessToken = accessToken
                self.accessToken = accessToken
            } else if let errorDescription = parameters?[SPTAppRemoteErrorDescriptionKey] {
-               print("error getting the access token occured")
+               
            }
        }
     

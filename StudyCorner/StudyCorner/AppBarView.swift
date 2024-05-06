@@ -5,7 +5,7 @@ struct AppBarView: View {
     @StateObject private var spotifyController = SpotifyController()
     @State private var currentPlaybackPosition: Double = 0.0
     @State var backgroundColor: Color = .red
-    @State var foregroundColorCalc: Color = .white
+    
 
     
     var body: some View {
@@ -134,11 +134,6 @@ struct AppBarView: View {
                         let darkenedColor = Color(uiColor: uiColor)
                         backgroundColor = darkenedColor
                     }
-            
-            if let uiColor = image?.averageColor(withDarkeningFactor: 10) {
-                let darkenedColor = Color(uiColor: uiColor)
-                foregroundColorCalc = darkenedColor
-            }
                 }
         .background(backgroundColor)
     }

@@ -24,17 +24,14 @@ final class SpotifyController: NSObject, ObservableObject {
     
    
     func pause() {
+               appRemote.playerAPI?.pause(nil)
+               isPlaying = false
+           }
         
-
-        appRemote.playerAPI?.pause(nil)
-        self.isPlaying = false
-         
-    }
-
-    func play() {
-        appRemote.playerAPI?.resume(nil)
-        self.isPlaying = true
-    }
+        func play() {
+              appRemote.playerAPI?.resume(nil)
+              isPlaying = true
+          }
 
     lazy var configuration = SPTConfiguration(
         clientID: spotifyClientID,
@@ -49,6 +46,7 @@ final class SpotifyController: NSObject, ObservableObject {
 
     override init() {
         super.init()
+        
         connectCancellable = NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)
             .receive(on: DispatchQueue.main)
             .sink { _ in
@@ -62,10 +60,17 @@ final class SpotifyController: NSObject, ObservableObject {
             }
     }
 
+    deinit {
+      
+        connectCancellable?.cancel()
+        disconnectCancellable?.cancel()
+    }
+
     func authorize() {
         appRemote.authorizeAndPlayURI("")
     }
 
+   
     func connect() {
         if let accessToken = accessToken {
             appRemote.connectionParameters.accessToken = accessToken
@@ -86,7 +91,7 @@ final class SpotifyController: NSObject, ObservableObject {
                appRemote.connectionParameters.accessToken = accessToken
                self.accessToken = accessToken
            } else if let errorDescription = parameters?[SPTAppRemoteErrorDescriptionKey] {
-               
+               print("error getting the access token occured. \(errorDescription)")
            }
        }
     

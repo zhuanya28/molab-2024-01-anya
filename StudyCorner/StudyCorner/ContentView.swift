@@ -31,7 +31,30 @@ struct ContentView: View {
             VStack {
                 Spacer()
                 
+                HStack{
+                    NavigationLink(
+                        destination: AppBarView(),
+                        label: {
+                            Image(systemName: "music.note")
+                                .padding()
+                                .foregroundColor(.white)
+                                .background(Color.black)
+                                .cornerRadius(8)
+                        }
+                    )
+                    NavigationLink(
+                        destination: RemindersMainView(),
+                        label: {
+                            Image(systemName: "list.bullet")
+                                .padding()
+                                .foregroundColor(.white)
+                                .background(Color.black)
+                                .cornerRadius(8)
+                        }
+                    )
+                }
                 Spacer()
+               
                 
                 Spacer()
                 

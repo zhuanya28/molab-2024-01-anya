@@ -7,7 +7,7 @@ import SwiftUI
 struct AppBarView: View {
     @StateObject private var spotifyController = SpotifyController()
     @State private var currentPlaybackPosition: Double = 0.0
-    @State var backgroundColor: Color = .red
+    @State var backgroundColor: Color = .black
     
 
     
@@ -17,6 +17,7 @@ struct AppBarView: View {
                 Color.clear
             }
             .background(backgroundColor)
+            
             VStack {
                 if let image = spotifyController.currentTrackImage {
                     ZStack {

@@ -76,15 +76,17 @@ struct LaunchScreenView: View {
                     )
                     
                     NavigationLink(
-                        destination: PlayerMainView(),
+                        destination: AppBarView(),
                         label: {
-                            Label("Player",  systemImage: "music.note")
+                            Label("Music",  systemImage: "music.note")
                                 .padding()
                                 .foregroundColor(.white)
                                 .background(Color.black)
                                 .cornerRadius(8)
                         }
                     )
+                    
+                    
                 }
                 .padding(.top, 20
                         )
@@ -107,6 +109,3 @@ struct LaunchScreenView: View {
     }
 }
 
-#Preview {
-    LaunchScreenView()
-}

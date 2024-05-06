@@ -77,7 +77,7 @@ struct RemindersMainView: View {
             
             .background(.black)
             .navigationBarBackButtonHidden(true)
-            .navigationBarItems(leading: CustomBackButton())
+            .navigationBarItems(leading: CustomBackButtonB())
         }
         
         
@@ -88,6 +88,3 @@ struct RemindersMainView: View {
 }
 
 
-#Preview{
-    RemindersMainView()
-}

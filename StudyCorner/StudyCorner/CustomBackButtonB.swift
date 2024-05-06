@@ -1,13 +1,13 @@
 //
-//  CustomBackButton.swift
+//  CustomBackButtonB.swift
 //  StudyCorner
 //
-//  Created by anya zhukova on 4/28/24.
+//  Created by anya zhukova on 5/5/24.
 //
 
 import SwiftUI
 
-struct CustomBackButton: View {
+struct CustomBackButtonB: View {
     @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
@@ -15,7 +15,7 @@ struct CustomBackButton: View {
             presentationMode.wrappedValue.dismiss()
         }) {
             Image(systemName: "arrow.backward")
-                .foregroundColor(.white)
+                .foregroundColor(.black)
                 .padding(.horizontal)
         }
     }

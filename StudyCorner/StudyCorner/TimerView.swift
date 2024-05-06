@@ -102,6 +102,3 @@ struct TimeDisplay: View {
 }
 
 
-#Preview {
-    TimerView()
-}

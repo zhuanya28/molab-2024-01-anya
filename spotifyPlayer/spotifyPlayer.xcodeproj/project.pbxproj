@@ -7,102 +7,110 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A734F9542BD70753008BFF29 /* spotifyTryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A734F9532BD70753008BFF29 /* spotifyTryApp.swift */; };
-		A734F9562BD70753008BFF29 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A734F9552BD70753008BFF29 /* ContentView.swift */; };
-		A734F9582BD70755008BFF29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A734F9572BD70755008BFF29 /* Assets.xcassets */; };
-		A734F95B2BD70755008BFF29 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A734F95A2BD70755008BFF29 /* Preview Assets.xcassets */; };
+		A7AD35952BE80D2C001652CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AD35942BE80D2C001652CF /* AppDelegate.swift */; };
+		A7AD35972BE80D2C001652CF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AD35962BE80D2C001652CF /* SceneDelegate.swift */; };
+		A7AD35992BE80D2C001652CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AD35982BE80D2C001652CF /* ViewController.swift */; };
+		A7AD359C2BE80D2C001652CF /* Base in Resources */ = {isa = PBXBuildFile; fileRef = A7AD359B2BE80D2C001652CF /* Base */; };
+		A7AD359E2BE80D2E001652CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7AD359D2BE80D2E001652CF /* Assets.xcassets */; };
+		A7AD35A12BE80D2E001652CF /* Base in Resources */ = {isa = PBXBuildFile; fileRef = A7AD35A02BE80D2E001652CF /* Base */; };
+		A7AD35AA2BE80D49001652CF /* SpotifyiOS in Frameworks */ = {isa = PBXBuildFile; productRef = A7AD35A92BE80D49001652CF /* SpotifyiOS */; };
+		A7AD35AC2BE80DD1001652CF /* SpotifyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AD35AB2BE80DD1001652CF /* SpotifyController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A734F9502BD70753008BFF29 /* spotifyTry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = spotifyTry.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A734F9532BD70753008BFF29 /* spotifyTryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spotifyTryApp.swift; sourceTree = "<group>"; };
-		A734F9552BD70753008BFF29 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		A734F9572BD70755008BFF29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A734F95A2BD70755008BFF29 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A7AD35912BE80D2C001652CF /* spotifyPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = spotifyPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7AD35942BE80D2C001652CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A7AD35962BE80D2C001652CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A7AD35982BE80D2C001652CF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A7AD359B2BE80D2C001652CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A7AD359D2BE80D2E001652CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A7AD35A02BE80D2E001652CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A7AD35A22BE80D2E001652CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7AD35AB2BE80DD1001652CF /* SpotifyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A734F94D2BD70753008BFF29 /* Frameworks */ = {
+		A7AD358E2BE80D2C001652CF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7AD35AA2BE80D49001652CF /* SpotifyiOS in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A734F9472BD70753008BFF29 = {
+		A7AD35882BE80D2C001652CF = {
 			isa = PBXGroup;
 			children = (
-				A734F9522BD70753008BFF29 /* spotifyTry */,
-				A734F9512BD70753008BFF29 /* Products */,
+				A7AD35932BE80D2C001652CF /* spotifyPlayer */,
+				A7AD35922BE80D2C001652CF /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		A734F9512BD70753008BFF29 /* Products */ = {
+		A7AD35922BE80D2C001652CF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A734F9502BD70753008BFF29 /* spotifyTry.app */,
+				A7AD35912BE80D2C001652CF /* spotifyPlayer.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A734F9522BD70753008BFF29 /* spotifyTry */ = {
+		A7AD35932BE80D2C001652CF /* spotifyPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				A734F9532BD70753008BFF29 /* spotifyTryApp.swift */,
-				A734F9552BD70753008BFF29 /* ContentView.swift */,
-				A734F9572BD70755008BFF29 /* Assets.xcassets */,
-				A734F9592BD70755008BFF29 /* Preview Content */,
+				A7AD35942BE80D2C001652CF /* AppDelegate.swift */,
+				A7AD35962BE80D2C001652CF /* SceneDelegate.swift */,
+				A7AD35AB2BE80DD1001652CF /* SpotifyController.swift */,
+				A7AD35982BE80D2C001652CF /* ViewController.swift */,
+				A7AD359A2BE80D2C001652CF /* Main.storyboard */,
+				A7AD359D2BE80D2E001652CF /* Assets.xcassets */,
+				A7AD359F2BE80D2E001652CF /* LaunchScreen.storyboard */,
+				A7AD35A22BE80D2E001652CF /* Info.plist */,
 			);
-			path = spotifyTry;
-			sourceTree = "<group>";
-		};
-		A734F9592BD70755008BFF29 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				A734F95A2BD70755008BFF29 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
+			path = spotifyPlayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A734F94F2BD70753008BFF29 /* spotifyTry */ = {
+		A7AD35902BE80D2C001652CF /* spotifyPlayer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A734F95E2BD70755008BFF29 /* Build configuration list for PBXNativeTarget "spotifyTry" */;
+			buildConfigurationList = A7AD35A52BE80D2E001652CF /* Build configuration list for PBXNativeTarget "spotifyPlayer" */;
 			buildPhases = (
-				A734F94C2BD70753008BFF29 /* Sources */,
-				A734F94D2BD70753008BFF29 /* Frameworks */,
-				A734F94E2BD70753008BFF29 /* Resources */,
+				A7AD358D2BE80D2C001652CF /* Sources */,
+				A7AD358E2BE80D2C001652CF /* Frameworks */,
+				A7AD358F2BE80D2C001652CF /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = spotifyTry;
-			productName = spotifyTry;
-			productReference = A734F9502BD70753008BFF29 /* spotifyTry.app */;
+			name = spotifyPlayer;
+			packageProductDependencies = (
+				A7AD35A92BE80D49001652CF /* SpotifyiOS */,
+			);
+			productName = spotifyPlayer;
+			productReference = A7AD35912BE80D2C001652CF /* spotifyPlayer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		A734F9482BD70753008BFF29 /* Project object */ = {
+		A7AD35892BE80D2C001652CF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1530;
 				LastUpgradeCheck = 1530;
 				TargetAttributes = {
-					A734F94F2BD70753008BFF29 = {
+					A7AD35902BE80D2C001652CF = {
 						CreatedOnToolsVersion = 15.3;
 					};
 				};
 			};
-			buildConfigurationList = A734F94B2BD70753008BFF29 /* Build configuration list for PBXProject "spotifyTry" */;
+			buildConfigurationList = A7AD358C2BE80D2C001652CF /* Build configuration list for PBXProject "spotifyPlayer" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -110,42 +118,67 @@
 				en,
 				Base,
 			);
-			mainGroup = A734F9472BD70753008BFF29;
-			productRefGroup = A734F9512BD70753008BFF29 /* Products */;
+			mainGroup = A7AD35882BE80D2C001652CF;
+			packageReferences = (
+				A7AD35A82BE80D49001652CF /* XCRemoteSwiftPackageReference "ios-sdk" */,
+			);
+			productRefGroup = A7AD35922BE80D2C001652CF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A734F94F2BD70753008BFF29 /* spotifyTry */,
+				A7AD35902BE80D2C001652CF /* spotifyPlayer */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A734F94E2BD70753008BFF29 /* Resources */ = {
+		A7AD358F2BE80D2C001652CF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A734F95B2BD70755008BFF29 /* Preview Assets.xcassets in Resources */,
-				A734F9582BD70755008BFF29 /* Assets.xcassets in Resources */,
+				A7AD359E2BE80D2E001652CF /* Assets.xcassets in Resources */,
+				A7AD35A12BE80D2E001652CF /* Base in Resources */,
+				A7AD359C2BE80D2C001652CF /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A734F94C2BD70753008BFF29 /* Sources */ = {
+		A7AD358D2BE80D2C001652CF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A734F9562BD70753008BFF29 /* ContentView.swift in Sources */,
-				A734F9542BD70753008BFF29 /* spotifyTryApp.swift in Sources */,
+				A7AD35AC2BE80DD1001652CF /* SpotifyController.swift in Sources */,
+				A7AD35992BE80D2C001652CF /* ViewController.swift in Sources */,
+				A7AD35952BE80D2C001652CF /* AppDelegate.swift in Sources */,
+				A7AD35972BE80D2C001652CF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		A7AD359A2BE80D2C001652CF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A7AD359B2BE80D2C001652CF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A7AD359F2BE80D2E001652CF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A7AD35A02BE80D2E001652CF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
-		A734F95C2BD70755008BFF29 /* Debug */ = {
+		A7AD35A32BE80D2E001652CF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -208,7 +241,7 @@
 			};
 			name = Debug;
 		};
-		A734F95D2BD70755008BFF29 /* Release */ = {
+		A7AD35A42BE80D2E001652CF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -264,20 +297,19 @@
 			};
 			name = Release;
 		};
-		A734F95F2BD70755008BFF29 /* Debug */ = {
+		A7AD35A62BE80D2E001652CF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"spotifyTry/Preview Content\"";
 				DEVELOPMENT_TEAM = 236Q868A5W;
-				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = spotifyPlayer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -285,7 +317,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = az2507.spotifyTry;
+				PRODUCT_BUNDLE_IDENTIFIER = az2507.spotifyPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -293,20 +325,19 @@
 			};
 			name = Debug;
 		};
-		A734F9602BD70755008BFF29 /* Release */ = {
+		A7AD35A72BE80D2E001652CF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"spotifyTry/Preview Content\"";
 				DEVELOPMENT_TEAM = 236Q868A5W;
-				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = spotifyPlayer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -314,7 +345,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = az2507.spotifyTry;
+				PRODUCT_BUNDLE_IDENTIFIER = az2507.spotifyPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -325,25 +356,44 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A734F94B2BD70753008BFF29 /* Build configuration list for PBXProject "spotifyTry" */ = {
+		A7AD358C2BE80D2C001652CF /* Build configuration list for PBXProject "spotifyPlayer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A734F95C2BD70755008BFF29 /* Debug */,
-				A734F95D2BD70755008BFF29 /* Release */,
+				A7AD35A32BE80D2E001652CF /* Debug */,
+				A7AD35A42BE80D2E001652CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A734F95E2BD70755008BFF29 /* Build configuration list for PBXNativeTarget "spotifyTry" */ = {
+		A7AD35A52BE80D2E001652CF /* Build configuration list for PBXNativeTarget "spotifyPlayer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A734F95F2BD70755008BFF29 /* Debug */,
-				A734F9602BD70755008BFF29 /* Release */,
+				A7AD35A62BE80D2E001652CF /* Debug */,
+				A7AD35A72BE80D2E001652CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A7AD35A82BE80D49001652CF /* XCRemoteSwiftPackageReference "ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/spotify/ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A7AD35A92BE80D49001652CF /* SpotifyiOS */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A7AD35A82BE80D49001652CF /* XCRemoteSwiftPackageReference "ios-sdk" */;
+			productName = SpotifyiOS;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = A734F9482BD70753008BFF29 /* Project object */;
+	rootObject = A7AD35892BE80D2C001652CF /* Project object */;
 }

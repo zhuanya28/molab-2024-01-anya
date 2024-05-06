@@ -5,6 +5,7 @@ struct AppBarView: View {
     @StateObject private var spotifyController = SpotifyController()
     @State private var currentPlaybackPosition: Double = 0.0
     @State var backgroundColor: Color = .red
+    @State var foregroundColorCalc: Color = .white
 
     
     var body: some View {
@@ -15,11 +16,14 @@ struct AppBarView: View {
             .background(backgroundColor)
             VStack {
                 if let image = spotifyController.currentTrackImage {
-                    Image(uiImage: image)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 300, height: 300)
-                        .padding(.bottom, 10)
+                    ZStack {
+                           Image(uiImage: image)
+                               .resizable()
+                               .aspectRatio(contentMode: .fit)
+                               .frame(width: 350, height: 350)
+                       }
+                       .padding(.bottom, 10)
+                       .cornerRadius(10)
                     
                 } else {
                     Image(systemName: "music.note")
@@ -29,16 +33,20 @@ struct AppBarView: View {
                         .frame(width: 300, height: 300)
                         .padding(.bottom, 10)
                 }
-                    
+          
                 
                 Text(spotifyController.currentTrackName ?? "Unknown Track")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundColor(.white)
+                    
                 
                 Text(spotifyController.currentTrackArtist ?? "Unknown Artist")
-                    .font(.headline)
+                    .font(.title)
+                    .fontWeight(.light)
                     .foregroundColor(.white)
+              
+     
                 
                 
                 
@@ -75,7 +83,13 @@ struct AppBarView: View {
                     
       
                 }
-        
+          
+                
+                Divider()
+                    .frame(width: 70)
+                    .background(Color.white)
+                    .padding()
+            
                 
                 
                 Button {
@@ -116,9 +130,15 @@ struct AppBarView: View {
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: CustomBackButton())
         .onReceive(spotifyController.$currentTrackImage) { image in
-                    if let uiColor = image?.averageColor {
-                        backgroundColor = Color(uiColor: uiColor)
+                    if let uiColor = image?.averageColor(withDarkeningFactor: 0.6) {
+                        let darkenedColor = Color(uiColor: uiColor)
+                        backgroundColor = darkenedColor
                     }
+            
+            if let uiColor = image?.averageColor(withDarkeningFactor: 10) {
+                let darkenedColor = Color(uiColor: uiColor)
+                foregroundColorCalc = darkenedColor
+            }
                 }
         .background(backgroundColor)
     }

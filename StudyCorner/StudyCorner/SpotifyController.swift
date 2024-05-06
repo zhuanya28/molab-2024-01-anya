@@ -14,19 +14,19 @@ final class SpotifyController: NSObject, ObservableObject {
     @Published var currentTrackArtist: String?
     @Published var currentTrackDuration: Int?
     @Published var currentTrackImage: UIImage?
-    @Published var isPlaying: Bool = false
+    @Published var isPlaying: Bool = true
 
     private var connectCancellable: AnyCancellable?
     private var disconnectCancellable: AnyCancellable?
 
     
     func pause() {
-           appRemote.playerAPI?.pause(nil)
+           appRemote.playerAPI?.pause()
            isPlaying = false
        }
     
     func play() {
-          appRemote.playerAPI?.resume(nil)
+          appRemote.playerAPI?.resume()
           isPlaying = true
       }
     

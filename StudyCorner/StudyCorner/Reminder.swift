@@ -28,5 +28,8 @@ extension Reminder {
   static let samples = [
     Reminder(title: "finish math homework", isCompleted: false),
     Reminder(title: "send an email to chemistry TA", isCompleted: false),
+    Reminder(title: "apply for a job", isCompleted: false),
+    Reminder(title: "listen to the song graham sent me", isCompleted: false),
+    Reminder(title: "buy flowers for mom", isCompleted: false),
   ]
 }

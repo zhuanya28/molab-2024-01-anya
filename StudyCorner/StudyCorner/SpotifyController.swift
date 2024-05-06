@@ -21,19 +21,21 @@ final class SpotifyController: NSObject, ObservableObject {
 
     private var connectCancellable: AnyCancellable?
     private var disconnectCancellable: AnyCancellable?
-
     
+   
     func pause() {
-           appRemote.playerAPI?.pause()
-           isPlaying = false
-       }
-    
+        
+
+        appRemote.playerAPI?.pause(nil)
+        self.isPlaying = false
+         
+    }
+
     func play() {
-          appRemote.playerAPI?.resume()
-          isPlaying = true
-      }
-    
-    
+        appRemote.playerAPI?.resume(nil)
+        self.isPlaying = true
+    }
+
     lazy var configuration = SPTConfiguration(
         clientID: spotifyClientID,
         redirectURL: spotifyRedirectURL

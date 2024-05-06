@@ -1,3 +1,6 @@
+// Credits: https://medium.com/@killian.j.sonna/integrating-spotifys-api-with-swiftui-a-step-by-step-guide-f85e92985e31
+// Spotify documentation: https://developer.spotify.com/documentation/ios/getting-started
+
 
 import SwiftUI
 

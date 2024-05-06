@@ -3,6 +3,7 @@
 //  StudyCorner
 //
 //  Created by anya zhukova on 5/6/24.
+// Credits to the inspiration: https://oguzhanaslann.medium.com/implementing-dynamic-background-color-from-images-in-swift-96e71dd73599
 //
 
 

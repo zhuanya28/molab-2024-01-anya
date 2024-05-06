@@ -26,6 +26,7 @@ struct Reminder: Identifiable {
 
 extension Reminder {
   static let samples = [
-    Reminder(title: "do ", isCompleted: true),
+    Reminder(title: "finish math homework", isCompleted: false),
+    Reminder(title: "send an email to chemistry TA", isCompleted: false),
   ]
 }

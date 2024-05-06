@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A7123C902BE8AB6000571010 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7123C8F2BE8AB6000571010 /* UIImage+Extension.swift */; };
 		A734F9442BD6FC40008BFF29 /* quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = A734F9432BD6FC40008BFF29 /* quotes.json */; };
 		A734F9462BD6FE1A008BFF29 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A734F9452BD6FE1A008BFF29 /* LaunchScreenView.swift */; };
 		A762DD2A2BDEE646005ABAE9 /* QuoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A762DD292BDEE646005ABAE9 /* QuoteModel.swift */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		A710560A2BE8963200760DCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A7123C8F2BE8AB6000571010 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		A734F9432BD6FC40008BFF29 /* quotes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = quotes.json; sourceTree = "<group>"; };
 		A734F9452BD6FE1A008BFF29 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 		A762DD292BDEE646005ABAE9 /* QuoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteModel.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				A762DD312BDF420C005ABAE9 /* AddReminderView.swift */,
 				A7AD35AD2BE811DF001652CF /* SpotifyController.swift */,
 				A7AD35AF2BE8160C001652CF /* AppBarView.swift */,
+				A7123C8F2BE8AB6000571010 /* UIImage+Extension.swift */,
 				A7BF2A222BCDC733008392C7 /* Assets.xcassets */,
 				A7BF2A242BCDC733008392C7 /* Preview Content */,
 				A7AD35B52BE83625001652CF /* StudyCorner-Bridging-Header.h */,
@@ -208,6 +211,7 @@
 				A734F9462BD6FE1A008BFF29 /* LaunchScreenView.swift in Sources */,
 				A7BF2A302BCDCE13008392C7 /* SearchObjectController.swift in Sources */,
 				A7AD35B42BE816C4001652CF /* CustomBackButtonB.swift in Sources */,
+				A7123C902BE8AB6000571010 /* UIImage+Extension.swift in Sources */,
 				A7BF2A322BCDCE60008392C7 /* Result.swift in Sources */,
 				A7BF2A342BCDF992008392C7 /* RemoteImageView.swift in Sources */,
 				A7AD35AE2BE811DF001652CF /* SpotifyController.swift in Sources */,
@@ -343,6 +347,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -371,6 +376,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = az2507.StudyCorner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "StudyCorner/StudyCorner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -385,6 +391,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -413,6 +420,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = az2507.StudyCorner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "StudyCorner/StudyCorner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;

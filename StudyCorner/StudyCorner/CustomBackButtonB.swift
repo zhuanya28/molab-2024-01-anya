@@ -18,6 +18,7 @@ struct CustomBackButtonB: View {
                 .foregroundColor(.black)
                 .padding(.horizontal)
         }
+      
     }
 }
 

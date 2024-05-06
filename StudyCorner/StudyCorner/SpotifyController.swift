@@ -84,6 +84,25 @@ final class SpotifyController: NSObject, ObservableObject {
                print("error getting the access token occured")
            }
        }
+    
+    func skipToNextTrack() {
+        appRemote.playerAPI?.skip(toNext: nil)
+    }
+    
+    func skipToPreviousTrack() {
+        appRemote.playerAPI?.skip(toPrevious: nil)
+    }
+
+    func getCurrentPlaybackPosition(completion: @escaping (Double?) -> Void) {
+        appRemote.playerAPI?.getPlayerState { (result, error) in
+            guard error == nil, let playerState = result as? SPTAppRemotePlayerState else {
+                completion(nil)
+                return
+            }
+            let playbackPosition = Double(playerState.playbackPosition)
+            completion(playbackPosition)
+        }
+    }
 
 
     func fetchImage() {

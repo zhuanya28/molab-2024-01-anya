@@ -21,6 +21,8 @@ struct RemindersMainView: View {
     @State private var reminders = Reminder.samples
     @State private var isAddReminderDialogPresented = false
     
+   
+    
     private func presentAddReminderView() {
         isAddReminderDialogPresented.toggle()
     }
@@ -30,20 +32,25 @@ struct RemindersMainView: View {
         ZStack{
             
             
-            Color.black.edgesIgnoringSafeArea(.all)
+            ZStack {
+                Color.clear
+            }
+            .background(.black)
             VStack {
                 List($reminders) { $reminder in
-                    HStack {
-                        Image(systemName: reminder.isCompleted ? "largecircle.fill.circle" : "circle")
-                            .imageScale(.large)
-                            .foregroundColor(.white)
-                            .onTapGesture {
-                                reminder.isCompleted.toggle()
-                            }
-                        Text(reminder.title)
-                            .foregroundColor(.white)
+                    if !reminder.isCompleted {
+                        HStack {
+                            Image(systemName: reminder.isCompleted ? "largecircle.fill.circle" : "circle")
+                                .imageScale(.large)
+                                .foregroundColor(.white)
+                                .onTapGesture {
+                                    reminder.isCompleted.toggle()
+                                }
+                            Text(reminder.title)
+                                .foregroundColor(.white)
+                        }
+                        .listRowBackground(Color.black)
                     }
-                    .listRowBackground(Color.black)
                 }
                 .background(Color.black)
                 
@@ -76,12 +83,11 @@ struct RemindersMainView: View {
             }
             
             .background(.black)
-            .navigationBarBackButtonHidden(true)
-            .navigationBarItems(leading: CustomBackButtonB())
+           
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: CustomBackButtonB())
         
-        
-        .background(Color.black)
         .navigationViewStyle(StackNavigationViewStyle())
     }
    
